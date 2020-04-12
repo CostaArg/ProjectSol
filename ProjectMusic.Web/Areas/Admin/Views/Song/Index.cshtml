@@ -1,0 +1,67 @@
+﻿@model PagedList.IPagedList<ProjectMusic.Entities.Song>
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "All Songs";
+}
+
+@{
+    SelectListItem a1 = new SelectListItem() { Text = "5", Value = "5" };
+    SelectListItem a2 = new SelectListItem() { Text = "10", Value = "10" };
+    SelectListItem a3 = new SelectListItem() { Text = "25", Value = "25" };
+    SelectListItem a4 = new SelectListItem() { Text = "50", Value = "50" };
+    SelectListItem a5 = new SelectListItem() { Text = "100", Value = "100" };
+    List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
+}
+
+<h2>All Songs</h2>
+
+<div class="">
+    <div class="float-left mt-3 ml-1">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(Model, x => @Url.Action("Index", "Song", new { page = x, sortOrder = ViewBag.CurrentSortOrder, searchName = ViewBag.CurrentName, pSize = ViewBag.CurrentpSize }))
+    </div>
+    <div class="float-right">
+        @using (Html.BeginForm("Index", "Song", FormMethod.Get, new { @class = "form-inline" }))
+        {
+            @Html.TextBox("searchName", null, new { @class = "form-control", placeholder = "Search Name" })
+            string str = ViewBag.CurrentSortOrder;
+            @Html.TextBox("sortOrder", str, new { type = "hidden" })
+
+            @Html.DropDownList("pSize", items, new { @class = "form-control" })
+            <input type="submit" value="Search" class="" />
+        }
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <div class="float-left">
+                Song Name
+            </div>
+            <div class="float-right">
+                @Html.ActionLink("Sort", "Index", "Song", new { sortOrder = ViewBag.NameSort }, new { @class = "" })
+            </div>
+        </th>
+    </tr>
+
+    @foreach (var song in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => song.SongName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = song.SongId }) |
+                @Html.ActionLink("Details", "Details", new { id = song.SongId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = song.SongId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,38 @@
+﻿@model PagedList.IPagedList<ProjectMusic.Entities.Genre>
+@using PagedList;
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "All Genres";
+}
+
+<h2>All Genres</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Photo
+        </th>
+        <th>
+            <div class="float-left">
+                Genre
+            </div>
+            <div class="float-right">
+                @Html.ActionLink("Sort", "Index", "Genre", new { sortOrder = ViewBag.NameSort }, new { @class = "" })
+            </div>
+        </th>
+    </tr>
+
+    @foreach (var genre in Model)
+    {
+        <tr>
+            <td>
+                <a href="/genre/details/@genre.GenreId"><img width="100" class="img-fluid" src="@genre.GenrePhotoUrl" alt="Image Missing" /></a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => genre.GenreName)
+            </td>
+        </tr>
+    }
+
+</table>

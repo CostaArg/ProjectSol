@@ -1,0 +1,76 @@
+﻿@model PagedList.IPagedList<ProjectMusic.Entities.Album>
+@using PagedList;
+@using PagedList.Mvc;
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+@{
+    ViewBag.Title = "All Albums";
+}
+
+@{
+    SelectListItem a1 = new SelectListItem() { Text = "5", Value = "5" };
+    SelectListItem a2 = new SelectListItem() { Text = "10", Value = "10" };
+    SelectListItem a3 = new SelectListItem() { Text = "25", Value = "25" };
+    SelectListItem a4 = new SelectListItem() { Text = "50", Value = "50" };
+    SelectListItem a5 = new SelectListItem() { Text = "100", Value = "100" };
+    List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
+}
+
+<h2>All Albums</h2>
+
+<div class="">
+    <div class="float-left mt-3 ml-1">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        @Html.PagedListPager(Model, x => @Url.Action("Index", "Album", new { page = x, sortOrder = ViewBag.CurrentSortOrder, searchName = ViewBag.CurrentName, pSize = ViewBag.CurrentpSize }))
+    </div>
+    <div class="float-right">
+        @using (Html.BeginForm("Index", "Album", FormMethod.Get, new { @class = "form-inline" }))
+        {
+            @Html.TextBox("searchName", null, new { @class = "form-control", placeholder = "Search Name" })
+            string str = ViewBag.CurrentSortOrder;
+            @Html.TextBox("sortOrder", str, new { type = "hidden" })
+
+            @Html.DropDownList("pSize", items, new { @class = "form-control" })
+            <input type="submit" value="Search" class="" />
+        }
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Photo
+        </th>
+        <th>
+            <div class="float-left">
+                Album Name
+            </div>
+            <div class="float-right">
+                @Html.ActionLink("Sort", "Index", "Album", new { sortOrder = ViewBag.NameSort }, new { @class = "" })
+            </div>
+        </th>
+    </tr>
+
+    @foreach (var album in Model)
+    {
+        <tr>
+            <td>
+                <a href="/album/details/@album.AlbumId"><img width="100" class="img-fluid" src="@album.AlbumPhotoUrl" alt="Image Missing" /></a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => album.AlbumName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = album.AlbumId }) |
+                @Html.ActionLink("Details", "Details", new { id = album.AlbumId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = album.AlbumId })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ProjectMusic.Services
 {
-    public class SongRepisitory
+    public class SongRepository
     {
 
         MyDatabase db = new MyDatabase();
