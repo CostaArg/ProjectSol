@@ -282,6 +282,8 @@
     <Content Include="Areas\Admin\Views\Song\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <Content Include="Areas\User\Views\UserHome\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_NavBar.cshtml" />
+    <Content Include="Areas\User\Views\Shared\_NavBar.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
