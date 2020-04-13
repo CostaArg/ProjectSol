@@ -1,1 +1,7 @@
-﻿
+﻿.box {
+    display: block;
+    margin: 50px;
+    /*border-color: black;
+    border-style: solid;
+    border-width: 10px;*/
+}
