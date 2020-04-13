@@ -193,6 +193,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\AlbumController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArtistController.cs" />
     <Compile Include="Areas\Admin\Controllers\GenreController.cs" />
@@ -201,6 +202,7 @@
     <Compile Include="Areas\User\Controllers\ArtistController.cs" />
     <Compile Include="Areas\User\Controllers\GenreController.cs" />
     <Compile Include="Areas\User\Controllers\SongController.cs" />
+    <Compile Include="Areas\User\Controllers\UserHomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -227,7 +229,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\User\Views\Shared\_UserLayout.cshtml" />
     <Content Include="Areas\User\Views\Album\Index.cshtml" />
     <Content Include="Areas\User\Views\Artist\Index.cshtml" />
     <Content Include="Areas\User\Views\Genre\Index.cshtml" />
@@ -257,7 +259,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Album\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Album\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Album\Details.cshtml" />
@@ -278,6 +280,8 @@
     <Content Include="Areas\Admin\Views\Song\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Song\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Song\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
+    <Content Include="Areas\User\Views\UserHome\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -370,7 +374,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />

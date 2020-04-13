@@ -1,8 +1,12 @@
-﻿
+﻿@{ 
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    ViewBag.Title = "Record Store";
+}
+
 <h1>Welcome to our Record Store!</h1>
 
-<a class="btn btn-primary m-2" href="/Admin">Go to Admin Area</a>
-<a class="btn btn-primary m-2" href="/User">Go to User Area</a>
+<a class="btn btn-primary m-2" href="/Admin/AdminHome">Go to Admin Area</a>
+<a class="btn btn-primary m-2" href="/User/UserHome">Go to User Area</a>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
