@@ -10,8 +10,14 @@
 </head>
 <body>
 
-    <div class="container">
-        @RenderBody()
+    <div class="container-fluid">
+        <div class="container-fluid">
+            @RenderPage("_NavBar.cshtml")
+        </div>
+
+        <div class="container mt-5">
+            @RenderBody()
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

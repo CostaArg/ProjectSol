@@ -5,3 +5,17 @@
     border-style: solid;
     border-width: 10px;*/
 }
+
+.carouselSize {
+    width: 60%;
+}
+
+.centerCarousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.centerText {
+    text-align: center;
+}
