@@ -37,7 +37,7 @@
     </div>
 </div>
 
-<table class="table">
+<table class="table mt-2">
     <tr>
         <th>
             Photo
@@ -46,10 +46,11 @@
             <div class="float-left">
                 Album Name
             </div>
-            <div class="float-right">
+            <div class="float-left ml-2">
                 @Html.ActionLink("Sort", "Index", "Album", new { sortOrder = ViewBag.NameSort }, new { @class = "btn btn-primary" })
             </div>
         </th>
+        <th></th>
     </tr>
 
     @foreach (var album in Model)

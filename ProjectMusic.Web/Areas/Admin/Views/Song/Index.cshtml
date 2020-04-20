@@ -39,16 +39,17 @@
 
 <a class="btn btn-primary" href="/Admin/Song/Create">Create New</a>
 
-<table class="table">
+<table class="table mt-2">
     <tr>
         <th>
             <div class="float-left">
                 Song Name
             </div>
-            <div class="float-right">
+            <div class="float-left ml-2">
                 @Html.ActionLink("Sort", "Index", "Song", new { sortOrder = ViewBag.NameSort }, new { @class = "btn btn-primary" })
             </div>
         </th>
+        <th></th>
     </tr>
 
     @foreach (var song in Model)
