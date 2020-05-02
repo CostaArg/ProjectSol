@@ -47,11 +47,6 @@ namespace ProjectMusic.Web
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            // Uncomment the following lines to enable logging in with third party login providers
-            //app.UseMicrosoftAccountAuthentication(
-            //    clientId: "",
-            //    clientSecret: "");
-
             //        app.UseTwitterAuthentication(new TwitterAuthenticationOptions
             //        {
             //            ConsumerKey = "vpjXLGkLYfkjNEYVEo1WETePc",
@@ -66,6 +61,12 @@ namespace ProjectMusic.Web
             //    "B13EC36903F8BF4701D498261A0802EF63642BC3" //DigiCert High Assurance EV Root CA
             //})
             //        });
+
+            //Uncomment the following lines to enable logging in with third party login providers
+
+            app.UseMicrosoftAccountAuthentication(
+                clientId: "1946b896-19c5-4720-957b-d6069d890383",
+                clientSecret: "=/2nl1F3O-7LUBt?s7xD[e9Q0g6s=R_z");
 
             app.UseTwitterAuthentication(
             consumerKey: "vpjXLGkLYfkjNEYVEo1WETePc",
