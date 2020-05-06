@@ -10,6 +10,7 @@ using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
 using ProjectMusic.Services;
+using ProjectMusic.Services.Repositories;
 
 namespace ProjectMusic.Web.Areas.Admin.Controllers
 {

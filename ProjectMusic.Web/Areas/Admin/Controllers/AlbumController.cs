@@ -10,13 +10,14 @@ using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
 using ProjectMusic.Services;
+using ProjectMusic.Services.Repositories;
 
 namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class AlbumController : Controller
     {
         private AlbumRepository albumRepository = new AlbumRepository();
-
+        
         // GET: Admin/Album
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {

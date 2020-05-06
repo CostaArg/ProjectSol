@@ -51,11 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlbumRepository.cs" />
-    <Compile Include="ArtistRepository.cs" />
-    <Compile Include="GenreRepository.cs" />
+    <Compile Include="IUnitofWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SongRepository.cs" />
+    <Compile Include="IRepositories\IAlbumRepository.cs" />
+    <Compile Include="IRepositories\IArtistRepository.cs" />
+    <Compile Include="IRepositories\IGenreRepository.cs" />
+    <Compile Include="IRepositories\IRepository.cs" />
+    <Compile Include="IRepositories\ISongRepository.cs" />
+    <Compile Include="Repositories\AlbumRepository.cs" />
+    <Compile Include="Repositories\ArtistRepository.cs" />
+    <Compile Include="Repositories\GenreRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SongRepository.cs" />
+    <Compile Include="UnitofWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProjectMusic.Database\ProjectMusic.Database.csproj">
@@ -71,6 +79,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
