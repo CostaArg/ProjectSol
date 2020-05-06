@@ -1,5 +1,6 @@
 ﻿using ProjectMusic.Database;
-using ProjectMusic.Services.IRepositories;
+using ProjectMusic.Entities;
+using ProjectMusic.Entities.IRepositories;
 using ProjectMusic.Services.Repositories;
 using System;
 using System.Collections.Generic;

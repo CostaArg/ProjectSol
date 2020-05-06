@@ -51,13 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IUnitofWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IRepositories\IAlbumRepository.cs" />
-    <Compile Include="IRepositories\IArtistRepository.cs" />
-    <Compile Include="IRepositories\IGenreRepository.cs" />
-    <Compile Include="IRepositories\IRepository.cs" />
-    <Compile Include="IRepositories\ISongRepository.cs" />
     <Compile Include="Repositories\AlbumRepository.cs" />
     <Compile Include="Repositories\ArtistRepository.cs" />
     <Compile Include="Repositories\GenreRepository.cs" />

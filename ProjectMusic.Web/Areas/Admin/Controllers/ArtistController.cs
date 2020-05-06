@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
+using ProjectMusic.Entities.Domain;
 using ProjectMusic.Services;
 using ProjectMusic.Services.Repositories;
 
@@ -16,12 +17,12 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class ArtistController : Controller
     {
-        private ArtistRepository artistRepository = new ArtistRepository();
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Admin/Artist
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
-            var artists = artistRepository.GetAll();
+            var artists = UnitOfWork.Artists.GetAll();
 
             //Viewbags
             ViewBag.CurrentName = searchName;
@@ -56,7 +57,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Artist artist = artistRepository.GetById(id);
+            Artist artist = UnitOfWork.Artists.Get(id);
 
             if (artist == null)
             {
@@ -81,7 +82,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                artistRepository.Insert(artist);
+                UnitOfWork.Artists.Add(artist);
+                UnitOfWork.Complete();
                 return RedirectToAction("Index");
             }
 
@@ -96,7 +98,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Artist artist = artistRepository.GetById(id);
+            Artist artist = UnitOfWork.Artists.Get(id);
 
             if (artist == null)
             {
@@ -115,7 +117,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                artistRepository.Update(artist);
+                //artistRepository.Update(artist);
                 return RedirectToAction("Index");
             }
             return View(artist);
@@ -129,7 +131,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Artist artist = artistRepository.GetById(id);
+            Artist artist = UnitOfWork.Artists.Get(id);
 
             if (artist == null)
             {
@@ -144,8 +146,9 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Artist artist = artistRepository.GetById(id);
-            artistRepository.Delete(artist);
+            Artist artist = UnitOfWork.Artists.Get(id);
+            UnitOfWork.Artists.Remove(artist);
+            UnitOfWork.Complete();
             return RedirectToAction("Index");
         }
 
@@ -153,7 +156,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                artistRepository.Dispose();
+                UnitOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

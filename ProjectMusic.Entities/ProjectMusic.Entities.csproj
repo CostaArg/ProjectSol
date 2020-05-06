@@ -51,11 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Album.cs" />
-    <Compile Include="Artist.cs" />
-    <Compile Include="Genre.cs" />
+    <Compile Include="Domain\Album.cs" />
+    <Compile Include="Domain\Artist.cs" />
+    <Compile Include="Domain\Genre.cs" />
+    <Compile Include="IRepositories\IAlbumRepository.cs" />
+    <Compile Include="IRepositories\IArtistRepository.cs" />
+    <Compile Include="IRepositories\IGenreRepository.cs" />
+    <Compile Include="IRepositories\IRepository.cs" />
+    <Compile Include="IRepositories\ISongRepository.cs" />
+    <Compile Include="IUnitofWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Song.cs" />
+    <Compile Include="Domain\Song.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

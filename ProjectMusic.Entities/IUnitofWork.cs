@@ -1,11 +1,11 @@
-﻿using ProjectMusic.Services.IRepositories;
+﻿using ProjectMusic.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectMusic.Services
+namespace ProjectMusic.Entities
 {
     public interface IUnitOfWork : IDisposable
     {

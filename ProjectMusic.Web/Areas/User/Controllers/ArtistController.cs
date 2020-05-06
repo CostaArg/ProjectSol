@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
+using ProjectMusic.Entities.Domain;
 using ProjectMusic.Services;
 using ProjectMusic.Services.Repositories;
 
@@ -16,12 +17,12 @@ namespace ProjectMusic.Web.Areas.User.Controllers
 {
     public class ArtistController : Controller
     {
-        private ArtistRepository artistRepository = new ArtistRepository();
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: User/Artist
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
-            var artists = artistRepository.GetAll();
+            var artists = UnitOfWork.Artists.GetAll();
 
             //Viewbags
             ViewBag.CurrentName = searchName;
@@ -56,7 +57,7 @@ namespace ProjectMusic.Web.Areas.User.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Artist artist = artistRepository.GetById(id);
+            Artist artist = UnitOfWork.Artists.Get(id);
 
             if (artist == null)
             {
@@ -70,7 +71,7 @@ namespace ProjectMusic.Web.Areas.User.Controllers
         {
             if (disposing)
             {
-                artistRepository.Dispose();
+                UnitOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjectMusic.Entities
+namespace ProjectMusic.Entities.Domain
 {
     public class Artist
     {

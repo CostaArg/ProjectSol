@@ -1,4 +1,5 @@
-﻿using ProjectMusic.Services.IRepositories;
+﻿
+using ProjectMusic.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,7 +19,7 @@ namespace ProjectMusic.Services.Repositories
             Context = context;
         }
 
-        public TEntity Get(int id)
+        public TEntity Get(object id)
         {
             // Here we are working with a DbContext, not PlutoContext. So we don't have DbSets 
             // such as Courses or Authors, and we need to use the generic Set() method to access them.

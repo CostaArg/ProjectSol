@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.SqlServer.Server;
 using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
+using ProjectMusic.Entities.Domain;
 using ProjectMusic.Services;
 using ProjectMusic.Services.Repositories;
 
@@ -16,12 +18,12 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class SongController : Controller
     {
-        private SongRepository songRepository = new SongRepository();
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Admin/Song
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
-            var songs = songRepository.GetAll();
+            var songs = UnitOfWork.Songs.GetAll();
 
             //Viewbags
             ViewBag.CurrentName = searchName;
@@ -56,7 +58,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Song song = songRepository.GetById(id);
+            Song song = UnitOfWork.Songs.Get(id);
 
             if (song == null)
             {
@@ -80,7 +82,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                songRepository.Insert(song);
+                UnitOfWork.Songs.Add(song);
+                UnitOfWork.Complete();
                 return RedirectToAction("Index");
             }
 
@@ -95,7 +98,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Song song = songRepository.GetById(id);
+            Song song = UnitOfWork.Songs.Get(id);
 
             if (song == null)
             {
@@ -113,7 +116,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                songRepository.Update(song);
+                //songRepository.Update(song);
                 return RedirectToAction("Index");
             }
             return View(song);
@@ -127,7 +130,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Song song = songRepository.GetById(id);
+            Song song = UnitOfWork.Songs.Get(id);
 
             if (song == null)
             {
@@ -141,8 +144,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Song song = songRepository.GetById(id);
-            songRepository.Delete(song);
+            Song song = UnitOfWork.Songs.Get(id);
+            UnitOfWork.Complete();
             return RedirectToAction("Index");
         }
 
@@ -150,7 +153,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                songRepository.Dispose();
+                UnitOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

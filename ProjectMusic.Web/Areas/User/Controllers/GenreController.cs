@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
+using ProjectMusic.Entities.Domain;
 using ProjectMusic.Services;
 using ProjectMusic.Services.Repositories;
 
@@ -16,12 +17,12 @@ namespace ProjectMusic.Web.Areas.User.Controllers
 {
     public class GenreController : Controller
     {
-        private GenreRepository genreRepository = new GenreRepository();
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: User/Genre
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
-            var genres = genreRepository.GetAll();
+            var genres = UnitOfWork.Genres.GetAll();
 
             //Viewbags
             ViewBag.CurrentName = searchName;
@@ -56,7 +57,7 @@ namespace ProjectMusic.Web.Areas.User.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Genre genre = genreRepository.GetById(id);
+            Genre genre = UnitOfWork.Genres.Get(id);
 
             if (genre == null)
             {
@@ -69,7 +70,7 @@ namespace ProjectMusic.Web.Areas.User.Controllers
         {
             if (disposing)
             {
-                genreRepository.Dispose();
+                UnitOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

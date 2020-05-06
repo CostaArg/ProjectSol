@@ -9,3 +9,15 @@ C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\Project
 C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.csproj.CopyComplete
 C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.dll
 C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.pdb
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\ProjectMusic.Entities.dll.config
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\ProjectMusic.Entities.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\ProjectMusic.Entities.pdb
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\EntityFramework.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\EntityFramework.xml
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.csprojAssemblyReference.cache
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.csproj.CoreCompileInputs.cache
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.csproj.CopyComplete
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.pdb

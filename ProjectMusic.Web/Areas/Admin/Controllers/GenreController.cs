@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using PagedList;
 using ProjectMusic.Database;
 using ProjectMusic.Entities;
+using ProjectMusic.Entities.Domain;
 using ProjectMusic.Services;
 using ProjectMusic.Services.Repositories;
 
@@ -16,12 +17,12 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class GenreController : Controller
     {
-        private GenreRepository genreRepository = new GenreRepository();
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Admin/Genre
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
-            var genres = genreRepository.GetAll();
+            var genres = UnitOfWork.Genres.GetAll();
 
             //Viewbags
             ViewBag.CurrentName = searchName;
@@ -56,7 +57,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Genre genre = genreRepository.GetById(id);
+            Genre genre = UnitOfWork.Genres.Get(id);
 
             if (genre == null)
             {
@@ -80,7 +81,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                genreRepository.Insert(genre);
+                UnitOfWork.Genres.Add(genre);
+                UnitOfWork.Complete();
                 return RedirectToAction("Index");
             }
 
@@ -95,7 +97,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Genre genre = genreRepository.GetById(id);
+            Genre genre = UnitOfWork.Genres.Get(id);
 
             if (genre == null)
             {
@@ -113,7 +115,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                genreRepository.Update(genre);
+                //genreRepository.Update(genre);
                 return RedirectToAction("Index");
             }
             return View(genre);
@@ -127,7 +129,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Genre genre = genreRepository.GetById(id);
+            Genre genre = UnitOfWork.Genres.Get(id);
 
             if (genre == null)
             {
@@ -141,8 +143,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Genre genre = genreRepository.GetById(id);
-            genreRepository.Delete(genre);
+            Genre genre = UnitOfWork.Genres.Get(id);
+            UnitOfWork.Complete();
             return RedirectToAction("Index");
         }
 
@@ -150,7 +152,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (disposing)
             {
-                genreRepository.Dispose();
+                UnitOfWork.Dispose();
             }
             base.Dispose(disposing);
         }

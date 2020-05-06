@@ -1,6 +1,7 @@
 ﻿using ProjectMusic.Database;
 using ProjectMusic.Entities;
-using ProjectMusic.Services.IRepositories;
+using ProjectMusic.Entities.Domain;
+using ProjectMusic.Entities.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace ProjectMusic.Services.Repositories
         public MyDatabase MyDatabase
         {
             get { return Context as MyDatabase; }
+        }
+
+        public IEnumerable<Album> GetDesc()
+        {
+            throw new NotImplementedException();
         }
     }
 }
