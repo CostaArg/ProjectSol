@@ -12,14 +12,14 @@ namespace ProjectMusic.Services.Repositories
 {
     public class AlbumRepository : Repository<Album>, IAlbumRepository
     {
-        public AlbumRepository(MyDatabase context)
+        public AlbumRepository(ApplicationDbContext context)
             : base(context)
         {
         }
 
-        public MyDatabase MyDatabase
+        public ApplicationDbContext ApplicationDbContext
         {
-            get { return Context as MyDatabase; }
+            get { return Context as ApplicationDbContext; }
         }
 
         public IEnumerable<Album> GetDesc()

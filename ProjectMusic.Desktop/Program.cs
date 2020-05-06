@@ -11,7 +11,7 @@ namespace ProjectMusic.Desktop
     {
         static void Main(string[] args)
         {
-            MyDatabase db = new MyDatabase();
+            ApplicationDbContext db = new ApplicationDbContext();
 
             var artists = db.Artists.ToList();
             var albums = db.Albums.ToList();

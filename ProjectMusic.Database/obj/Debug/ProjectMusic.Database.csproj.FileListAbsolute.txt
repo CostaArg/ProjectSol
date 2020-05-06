@@ -27,3 +27,7 @@ C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\obj\Debug\Project
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\obj\Debug\ProjectMusic.Database.csproj.CopyComplete
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\obj\Debug\ProjectMusic.Database.dll
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\obj\Debug\ProjectMusic.Database.pdb
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Database\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

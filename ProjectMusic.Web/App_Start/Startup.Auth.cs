@@ -13,6 +13,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.Owin.Security.OpenIdConnect;
 using Microsoft.Owin.Security.Notifications;
 using System.Threading.Tasks;
+using ProjectMusic.Database;
+using ProjectMusic.Entities.Domain;
 
 namespace ProjectMusic.Web
 {

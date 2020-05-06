@@ -33,3 +33,7 @@ C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\obj\Debug\Project
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\obj\Debug\ProjectMusic.Services.csproj.CopyComplete
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\obj\Debug\ProjectMusic.Services.dll
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\obj\Debug\ProjectMusic.Services.pdb
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

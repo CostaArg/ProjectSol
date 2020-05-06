@@ -1,20 +1,32 @@
-﻿using ProjectMusic.Entities;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using ProjectMusic.Entities;
 using ProjectMusic.Entities.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjectMusic.Database
 {
-    public class MyDatabase : DbContext
-    {
-        public MyDatabase() : base("musicConnection")
-        {
 
+
+
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    {
+        public ApplicationDbContext()
+            : base("musicConnection", throwIfV1Schema: false)
+        {
         }
+
+        public static ApplicationDbContext Create()
+        {
+            return new ApplicationDbContext();
+        }
+
+
 
         #region DATA TABLES
 
@@ -23,6 +35,12 @@ namespace ProjectMusic.Database
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Genre> Genres { get; set; }
 
+        
+
         #endregion
+
     }
+
+
+
 }

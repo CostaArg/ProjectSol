@@ -17,7 +17,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class GenreController : Controller
     {
-        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
 
         // GET: Admin/Genre
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)

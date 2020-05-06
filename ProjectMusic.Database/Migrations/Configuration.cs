@@ -8,14 +8,14 @@
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ProjectMusic.Database.MyDatabase>
+    internal sealed class Configuration : DbMigrationsConfiguration<ProjectMusic.Database.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(ProjectMusic.Database.MyDatabase context)
+        protected override void Seed(ProjectMusic.Database.ApplicationDbContext context)
         {
             #region SEEDING DATA
 

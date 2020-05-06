@@ -17,7 +17,7 @@ namespace ProjectMusic.Web.Areas.User.Controllers
 {
     public class AlbumController : Controller
     {
-        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
 
         // GET: User/Album
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)

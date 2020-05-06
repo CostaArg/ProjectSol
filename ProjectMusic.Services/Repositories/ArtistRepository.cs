@@ -12,14 +12,14 @@ namespace ProjectMusic.Services.Repositories
 {
     public class ArtistRepository : Repository<Artist>, IArtistRepository
     {
-        public ArtistRepository(MyDatabase context)
+        public ArtistRepository(ApplicationDbContext context)
             : base(context)
         {
         }
 
-        public MyDatabase MyDatabase
+        public ApplicationDbContext ApplicationDbContext
         {
-            get { return Context as MyDatabase; }
+            get { return Context as ApplicationDbContext; }
         }
     }
 }

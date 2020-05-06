@@ -12,9 +12,9 @@ namespace ProjectMusic.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly MyDatabase _context;
+        private readonly ApplicationDbContext _context;
 
-        public UnitOfWork(MyDatabase context)
+        public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
             Albums = new AlbumRepository(_context);

@@ -12,14 +12,14 @@ namespace ProjectMusic.Services.Repositories
 {
     public class GenreRepository : Repository<Genre>, IGenreRepository
     {
-        public GenreRepository(MyDatabase context)
+        public GenreRepository(ApplicationDbContext context)
             : base(context)
         {
         }
 
-        public MyDatabase MyDatabase
+        public ApplicationDbContext ApplicationDbContext
         {
-            get { return Context as MyDatabase; }
+            get { return Context as ApplicationDbContext; }
         }
     }
 }

@@ -247,6 +247,7 @@
     <Compile Include="Areas\User\Controllers\UserHomeController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GiaPetamaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -451,6 +452,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\GiaPetama\Create.cshtml" />
+    <Content Include="Views\GiaPetama\Delete.cshtml" />
+    <Content Include="Views\GiaPetama\Details.cshtml" />
+    <Content Include="Views\GiaPetama\Edit.cshtml" />
+    <Content Include="Views\GiaPetama\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

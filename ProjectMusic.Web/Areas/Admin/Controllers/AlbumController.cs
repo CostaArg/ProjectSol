@@ -19,7 +19,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
     {
         // private AlbumRepository albumRepository = new AlbumRepository();
 
-        private IUnitOfWork UnitOfWork = new UnitOfWork(new MyDatabase());
+        private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
 
        
 
