@@ -122,9 +122,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //Bale UPDATE METHOD
-                //Min ksexaseis Complete();
-                //albumRepository.Update(album);
+                UnitOfWork.Albums.Update(album);
+                UnitOfWork.Complete();
                 return RedirectToAction("Index");
             }
             return View(album);

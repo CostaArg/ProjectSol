@@ -117,7 +117,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                //artistRepository.Update(artist);
+                UnitOfWork.Artists.Update(artist);
+                UnitOfWork.Complete();
                 return RedirectToAction("Index");
             }
             return View(artist);

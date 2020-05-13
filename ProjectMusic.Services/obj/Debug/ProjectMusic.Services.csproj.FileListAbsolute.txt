@@ -37,3 +37,7 @@ C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microso
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Users\hecto\Source\Repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Services\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
