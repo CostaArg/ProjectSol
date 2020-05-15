@@ -1,0 +1,42 @@
+/* :: 4.0 Heading CSS */
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+
+  h2 {
+    font-size: 44px;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    @media #{$breakpoint-lg} {
+      font-size: 30px;
+    }
+    @media #{$breakpoint-md} {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    @media #{$breakpoint-xs} {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .line {
+    width: 70px;
+    height: 5px;
+    background-color: $primary;
+  }
+
+  &.text-center {
+    .line {
+      margin: 0 auto;
+    }
+  }
+
+  &.white {
+    h2 {
+      color: $white;
+    }
+  }
+}

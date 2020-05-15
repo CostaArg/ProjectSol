@@ -1,0 +1,13 @@
+/* :: 11.0 About CSS */
+
+.about-us-content {
+  position: relative;
+  z-index: 1;
+
+  h1,
+  h2 {
+    @media #{$breakpoint-xs} {
+      font-size: 24px;
+    }
+  }
+}
