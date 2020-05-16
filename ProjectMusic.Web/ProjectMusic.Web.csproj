@@ -597,6 +597,10 @@
     <Content Include="Content\adminTheme\assets\fonts\Pe-icon-7-stroke.eot" />
     <Content Include="Content\adminTheme\assets\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Content\adminTheme\assets\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Areas\User\Views\Song\Details.cshtml" />
+    <Content Include="Areas\User\Views\Genre\Details.cshtml" />
+    <Content Include="Areas\User\Views\Artist\Details.cshtml" />
+    <Content Include="Areas\User\Views\Album\Details.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
