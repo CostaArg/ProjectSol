@@ -254,6 +254,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -310,7 +311,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\theme\about.html" />
-    <Content Include="Content\theme\audio\dummy-audio.mp3" />
+    <Content Include="Content\theme\audio\Pneuma.mp3" />
     <Content Include="Content\theme\blog.html" />
     <Content Include="Content\theme\changelog.txt" />
     <Content Include="Content\theme\contact.html" />
@@ -601,6 +602,8 @@
     <Content Include="Areas\User\Views\Genre\Details.cshtml" />
     <Content Include="Areas\User\Views\Artist\Details.cshtml" />
     <Content Include="Areas\User\Views\Album\Details.cshtml" />
+    <Content Include="Areas\User\Views\Shared\Components\_FooterUser.cshtml" />
+    <Content Include="Areas\User\Views\Shared\Components\_NavigationBarUser.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -731,6 +734,7 @@
     <Content Include="Views\GiaPetama\Details.cshtml" />
     <Content Include="Views\GiaPetama\Edit.cshtml" />
     <Content Include="Views\GiaPetama\Index.cshtml" />
+    <Content Include="Views\Shared\_HeaderUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace ProjectMusic.Services.Repositories
 {
@@ -20,6 +21,13 @@ namespace ProjectMusic.Services.Repositories
         public ApplicationDbContext ApplicationDbContext
         {
             get { return Context as ApplicationDbContext; }
+        }
+
+        public IEnumerable<Album> GetAlbumsWithSongs()
+        {
+
+
+           return ApplicationDbContext.Albums.Include(x => x.Songs).ToList();
         }
 
         public IEnumerable<Album> GetDesc()

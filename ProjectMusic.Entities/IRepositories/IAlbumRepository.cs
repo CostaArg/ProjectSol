@@ -10,6 +10,9 @@ namespace ProjectMusic.Entities.IRepositories
 {
     public interface IAlbumRepository : IRepository<Album>
     {
+
         IEnumerable<Album> GetDesc();
+
+        IEnumerable<Album> GetAlbumsWithSongs();
     }
 }

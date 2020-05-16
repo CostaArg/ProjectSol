@@ -3,6 +3,7 @@ using ProjectMusic.Database;
 using ProjectMusic.Entities;
 using ProjectMusic.Entities.Domain;
 using ProjectMusic.Services;
+using ProjectMusic.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,12 @@ namespace ProjectMusic.Web.Areas.User.Controllers
 
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
-            var albums = UnitOfWork.Albums.GetAll();
+            var albums = UnitOfWork.Albums.GetAlbumsWithSongs();
+            var genrenames = UnitOfWork.Genres.GetAll().Distinct().Select(x => x.GenreName);
+
+            HomeViewModel vm = new HomeViewModel();
+            vm.Albums = albums.ToList();
+            vm.GenreNames = genrenames.ToList();
 
             //Viewbags
             ViewBag.CurrentName = searchName;
@@ -42,7 +48,7 @@ namespace ProjectMusic.Web.Areas.User.Controllers
             int pageSize = pSize ?? 3;
             int pageNumber = page ?? 1;
 
-            return View(albums.ToPagedList(pageNumber, pageSize));
+            return View(vm);
         }
 
         public ActionResult Details(int? id)

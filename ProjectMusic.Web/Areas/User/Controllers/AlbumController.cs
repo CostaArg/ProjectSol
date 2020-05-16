@@ -24,6 +24,8 @@ namespace ProjectMusic.Web.Areas.User.Controllers
         {
             var albums = UnitOfWork.Albums.GetAll();
 
+            
+
             //Viewbags
             ViewBag.CurrentName = searchName;
             ViewBag.CurrentSortOrder = sortOrder;
