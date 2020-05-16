@@ -125,79 +125,73 @@
 }
 
 .top-search-area {
-    margin: 0 30px;
-    padding-right: 30px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 0 30px;
+  padding-right: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  @media #{$breakpoint-lg} {
+    margin: 0 15px;
+    padding-right: 15px;
+  }
+  @media #{$breakpoint-md} {
+    margin: 15px 15px 30px;
+    padding-right: 0;
+    border-right: none;
+  }
+  @media #{$breakpoint-xs} {
+    margin: 15px 15px 30px;
+    padding-right: 0;
+    border-right: none;
+  }
 
+  form {
+    position: relative;
+    width: 210px;
+    z-index: 1;
     @media #{$breakpoint-lg} {
-        margin: 0 15px;
-        padding-right: 15px;
+      width: 180px;
     }
-
     @media #{$breakpoint-md} {
-        margin: 15px 15px 30px;
-        padding-right: 0;
-        border-right: none;
+      width: 220px;
     }
-
     @media #{$breakpoint-xs} {
-        margin: 15px 15px 30px;
-        padding-right: 0;
-        border-right: none;
+      width: 220px;
     }
 
-    form {
-        position: relative;
-        width: 210px;
-        z-index: 1;
+    input.form-control {
+      width: 100%;
+      height: 35px;
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      font-size: 14px;
+      font-style: italic;
+      color: $white;
 
-        @media #{$breakpoint-lg} {
-            width: 180px;
-        }
-
-        @media #{$breakpoint-md} {
-            width: 220px;
-        }
-
-        @media #{$breakpoint-xs} {
-            width: 220px;
-        }
-
-        input.form-control {
-            width: 100%;
-            height: 35px;
-            background-color: transparent;
-            border-radius: 0;
-            border: none;
-            font-size: 14px;
-            font-style: italic;
-            color: $white;
-
-            &:focus {
-                background-color: transparent;
-                box-shadow: none;
-            }
-        }
-
-        button {
-            cursor: pointer;
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: 10;
-            border: none;
-            width: 35px;
-            height: 35px;
-            line-height: 35px;
-            background-color: transparent;
-            color: $white;
-            text-align: right;
-
-            &:focus {
-                outline: none;
-            }
-        }
+      &:focus {
+        background-color: transparent;
+        box-shadow: none;
+      }
     }
+
+    button {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      border: none;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      background-color: transparent;
+      color: $white;
+      text-align: right;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
 }
 
 .top-social-area {
