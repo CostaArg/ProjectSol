@@ -1,0 +1,258 @@
+/* :: 7.0 Header CSS */
+
+.header-area {
+  position: fixed;
+  z-index: 599;
+  width: 100%;
+  left: 0;
+  top: 0;
+  @include transition-duration(500ms);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  .main-header-area.sticky {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    background-color: $dark;
+    box-shadow: 0 3px 50px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+    left: 0;
+    z-index: 650;
+    border-bottom-color: transparent;
+  }
+}
+
+.classy-nav-container {
+  background-color: transparent;
+  padding: 0 2%;
+  @media #{$breakpoint-xs} {
+    padding: 0 15px;
+  }
+
+  .classy-navbar {
+    height: 80px;
+    padding: 0;
+    @media #{$breakpoint-xs} {
+      height: 70px;
+    }
+
+    .nav-brand {
+      @media #{$breakpoint-xs} {
+        max-width: 90px;
+        margin-right: 15px;
+      }
+    }
+
+    .classynav ul li {
+      a {
+        position: relative;
+        z-index: 1;
+        font-weight: 700;
+        font-size: 18px;
+        text-transform: capitalize;
+        color: $white;
+
+        &:focus,
+        &:hover {
+          color: $primary;
+        }
+        @media #{$breakpoint-lg} {
+          font-size: 14px;
+        }
+        @media #{$breakpoint-md} {
+          border-bottom: none;
+          font-size: 14px;
+        }
+        @media #{$breakpoint-xs} {
+          border-bottom: none;
+          font-size: 14px;
+        }
+      }
+
+      &.cn-dropdown-item {
+        ul li {
+          a {
+            font-size: 14px;
+            text-transform: capitalize;
+          }
+        }
+      }
+
+      &.current-item {
+        a {
+          &::after {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 3px;
+            background-color: $primary;
+            bottom: 0;
+            left: 50%;
+            @include transform(translateX(-50%));
+            z-index: 1;
+            @media #{$breakpoint-md} {
+              width: 100%;
+              height: 1px;
+            }
+            @media #{$breakpoint-xs} {
+              width: 100%;
+              height: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.classynav ul li.has-down > a::after,
+.classynav ul li.megamenu-item > a::after {
+  color: $white;
+}
+
+.breakpoint-off .classynav ul li .dropdown {
+  background-color: $dark;
+}
+
+.classynav ul li .dropdown li a {
+  border-bottom: none;
+  height: 40px;
+}
+
+.classynav ul li .dropdown li .dropdown li .dropdown li a,
+.classynav ul li .dropdown li .dropdown li a {
+  border-bottom: none;
+}
+
+.top-search-area {
+  margin: 0 30px;
+  padding-right: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  @media #{$breakpoint-lg} {
+    margin: 0 15px;
+    padding-right: 15px;
+  }
+  @media #{$breakpoint-md} {
+    margin: 15px 15px 30px;
+    padding-right: 0;
+    border-right: none;
+  }
+  @media #{$breakpoint-xs} {
+    margin: 15px 15px 30px;
+    padding-right: 0;
+    border-right: none;
+  }
+
+  form {
+    position: relative;
+    width: 210px;
+    z-index: 1;
+    @media #{$breakpoint-lg} {
+      width: 180px;
+    }
+    @media #{$breakpoint-md} {
+      width: 220px;
+    }
+    @media #{$breakpoint-xs} {
+      width: 220px;
+    }
+
+    input.form-control {
+      width: 100%;
+      height: 35px;
+      background-color: transparent;
+      border-radius: 0;
+      border: none;
+      font-size: 14px;
+      font-style: italic;
+      color: $white;
+
+      &:focus {
+        background-color: transparent;
+        box-shadow: none;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      border: none;
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      background-color: transparent;
+      color: $white;
+      text-align: right;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+.top-social-area {
+  position: relative;
+  z-index: 1;
+  @media #{$breakpoint-md} {
+    margin-left: 30px;
+  }
+  @media #{$breakpoint-xs} {
+    margin-left: 30px;
+  }
+
+  a {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 15px;
+    color: $white;
+    @media #{$breakpoint-lg} {
+      margin: 0 5px;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:focus,
+    &:hover {
+      font-size: 16px;
+      color: $primary;
+    }
+  }
+}
+@media #{$breakpoint-md} {
+  .breakpoint-on .classy-navbar .classy-menu {
+    background-color: $dark;
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .breakpoint-on .classynav > ul > li > a {
+    background-color: $dark;
+  }
+
+  .classycloseIcon .cross-wrap span {
+    background-color: $white;
+  }
+}
+@media #{$breakpoint-xs} {
+  .breakpoint-on .classy-navbar .classy-menu {
+    background-color: $dark;
+    box-shadow: 0 0 30px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .breakpoint-on .classynav > ul > li > a {
+    background-color: $dark;
+  }
+
+  .classycloseIcon .cross-wrap span {
+    background-color: $white;
+  }
+}

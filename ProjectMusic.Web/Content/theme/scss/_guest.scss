@@ -1,0 +1,30 @@
+/* :: 10.0 Guest CSS */
+
+.single-featured-guest {
+  position: relative;
+  z-index: 1;
+
+  img {
+    width: 100%;
+  }
+
+  .guest-info {
+    position: relative;
+    z-index: 1;
+    margin-top: 30px;
+    text-align: center;
+
+    h5 {
+      font-size: 22px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    span {
+      display: block;
+      color: $primary;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+}
