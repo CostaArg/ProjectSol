@@ -10,60 +10,19 @@
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="~/Content/theme/style.css">
-
 </head>
 <body>
-    @*<div class="container-fluid mt-5">
-            <div class="container-fluid">
-                @RenderPage("_NavBar.cshtml")
-            </div>
-
-            <div class="container-fluid">
-                @RenderBody()
-            </div>
-        </div>*@
-
-
-
-
-
-    <!-- ***** Header Area Start ***** -->
-   
-    <!-- ***** Header Area End ***** -->
-
-
-
-
-
-
     <div>
-
         <header class="header-area">
             @RenderPage("~/Areas/User/Views/Shared/Components/_NavigationBarUser.cshtml")
-
-
-
         </header>
-
 
         @RenderBody()
 
         <footer class="footer-area section-padding-80-0">
             @RenderPage("~/Areas/User/Views/Shared/Components/_FooterUser.cshtml");
-
-
         </footer>
-
-
     </div>
-
-
-
-
-
-    <!-- ***** Footer Area Start ***** -->
-   
-
 
     <!-- ***** Footer Area End ***** -->
     <!-- ******* All JS ******* -->

@@ -1,24 +1,10 @@
 ﻿@model ProjectMusic.Web.Models.HomeViewModel
-@using PagedList;
-@using PagedList.Mvc;
-@using System.Linq; 
-
-<link href="~/Content/PagedList.css" rel="stylesheet" />
+@using System.Linq;
 
 @{
     ViewBag.Title = "User Area";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
-
-@{
-    SelectListItem a1 = new SelectListItem() { Text = "5", Value = "5" };
-    SelectListItem a2 = new SelectListItem() { Text = "10", Value = "10" };
-    SelectListItem a3 = new SelectListItem() { Text = "25", Value = "25" };
-    SelectListItem a4 = new SelectListItem() { Text = "50", Value = "50" };
-    SelectListItem a5 = new SelectListItem() { Text = "100", Value = "100" };
-    List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
-}
-
 
 <!-- Preloader -->
 <div id="preloader">
@@ -27,15 +13,10 @@
     </div>
 </div>
 
-
 <!-- ***** Welcome Area Start ***** -->
 <section class="welcome-area">
     <!-- Welcome Slides -->
     <div class="welcome-slides owl-carousel">
-
-
-    
-
         <!-- Single Welcome Slide -->
         <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(../Content/theme/img/bg-img/1.jpg)">
             <div class="container h-100">
@@ -81,124 +62,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- Single Welcome Slide -->
-        <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(../Content/theme/img/bg-img/2.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Welcome Text -->
-                        <div class="welcome-text">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">Listen Now</h2>
-                            <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to make it visible here.</h5>
-                            <div class="welcome-btn-group">
-                                <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp" data-delay="500ms">Subscribe with iTunes</a>
-                                <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp" data-delay="700ms">Subscribe with RSS</a>
-                            </div>
-                        </div>
-                        <!-- Welcome Music Area -->
-                        <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
-                            <div class="poca-music-thumbnail">
-                                <img src="~/Content/theme/img/bg-img/4.jpg" alt="">
-                            </div>
-                            <div class="poca-music-content">
-                                <span class="music-published-date">December 8, 2018</span>
-                                <h2>Episode 202 - The Last Blockbuster</h2>
-                                <div class="music-meta-data">
-                                    <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-                                </div>
-                                <!-- Music Player -->
-                                <div class="poca-music-player">
-                                    <audio preload="auto" controls>
-                                        <source src="~/Content/theme/audio/dummy-audio.mp3">
-                                    </audio>
-                                </div>
-                                <!-- Likes, Share & Download -->
-                                <div class="likes-share-download d-flex align-items-center justify-content-between">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                                    <div>
-                                        <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                                        <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Single Welcome Slide -->
-        <div class="welcome-welcome-slide bg-img bg-overlay" style="background-image: url(../Content/theme/img/bg-img/3.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Welcome Text -->
-                        <div class="welcome-text">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">Discover Today</h2>
-                            <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to make it visible here.</h5>
-                            <div class="welcome-btn-group">
-                                <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp" data-delay="500ms">Subscribe with iTunes</a>
-                                <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp" data-delay="700ms">Subscribe with RSS</a>
-                            </div>
-                        </div>
-                        <!-- Welcome Music Area -->
-                        <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
-                            <div class="poca-music-thumbnail">
-                                <img src="~/Content/theme/img/bg-img/4.jpg" alt="">
-                            </div>
-                            <div class="poca-music-content">
-                                <span class="music-published-date">December 7, 2018</span>
-                                <h2>Episode 201 - The Last Blockbuster</h2>
-                                <div class="music-meta-data">
-                                    <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
-                                </div>
-                                <!-- Music Player -->
-                                <div class="poca-music-player">
-                                    <audio preload="auto" controls>
-                                        <source src="~/Content/theme/audio/dummy-audio.mp3">
-                                    </audio>
-                                </div>
-                                <!-- Likes, Share & Download -->
-                                <div class="likes-share-download d-flex align-items-center justify-content-between">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                                    <div>
-                                        <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                                        <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>
-
-
-
-
 <!-- ***** Welcome Area End ***** -->
-
-@*<div class="container-fluid box">
-    <div>
-        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
-        @Html.PagedListPager(Model, x => @Url.Action("Index", "UserHome", new { page = x, sortOrder = ViewBag.CurrentSortOrder, searchName = ViewBag.CurrentName, pSize = ViewBag.CurrentpSize }))
-    </div>
-    <div>
-        @using (Html.BeginForm("Index", "UserHome", FormMethod.Get, new { @class = "form-inline" }))
-        {
-            @Html.TextBox("searchName", null, new { @class = "form-control", placeholder = "Search Name" })
-            string str = ViewBag.CurrentSortOrder;
-            @Html.TextBox("sortOrder", str, new { type = "hidden" })
-
-            @Html.DropDownList("pSize", items, new { @class = "form-control" })
-            <input type="submit" value="Search" class="btn btn-primary" />
-        }
-    </div>
-</div>*@
 
 <!-- ***** Latest Episodes Area Start ***** -->
 <section class="poca-latest-epiosodes section-padding-80">
@@ -213,7 +79,6 @@
             </div>
         </div>
     </div>
-
     <!-- Projects Menu -->
     <div class="container">
         <div class="poca-projects-menu mb-30 wow fadeInUp" data-wow-delay="0.3s">
@@ -221,23 +86,18 @@
                 <button class="btn active" data-filter="*">All</button>
                 @foreach (var item in Model.GenreNames.Distinct())
                 {
-            <button class="btn" data-filter=.@item>@item</button>
+                    <button class="btn" data-filter=.@item>@item</button>
                 }
-
-              
             </div>
         </div>
     </div>
-
     <div class="container-fluid" style="width:90%">
-        <div class="row poca-portfolio">
-
+        <div class="poca-portfolio">
 
             @foreach (var album in Model.Albums)
             {
-
                 <!-- Single gallery Item -->
-                
+
                 <div class="col-12 col-md-3 single_gallery_item @album.Songs.First().Genres.First().GenreName wow fadeInUp" data-wow-delay="0.2s">
                     <!-- Welcome Music Area -->
                     <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
@@ -245,18 +105,16 @@
                             <img src="~/Content/theme/img/bg-img/5.jpg" alt="">
                         </div>
                         <div class="poca-music-content text-center">
-                            <span class="music-published-date mb-2">December 9, 2018</span>
                             <a href="/user/album/details/@album.AlbumId">
                                 <h2>@Html.DisplayFor(modelItem => album.AlbumName)</h2>
-
                             </a>
                             <div class="music-meta-data">
                                 <p>By <a href="#" class="music-author">@album.Artist.ArtistName</a> | <a href="#" class="music-catagory">@album.Songs.First().Genres.First().GenreName</a></p>
                             </div>
+                            <span class="music-published-date">Listen to the Sample</span>
                             <!-- Music Player -->
                             <div class="poca-music-player">
                                 <audio preload="auto" controls>
-
                                     @{
                                         var path = "../Content/theme/audio/" + @album.Songs.First().SongName + ".mp3";
                                     }
@@ -275,32 +133,10 @@
                     </div>
                 </div>
             }
-
-
-        </div>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <a href="#" class="btn poca-btn mt-70">Load More</a>
-            </div>
         </div>
     </div>
 </section>
 <!-- ***** Latest Episodes Area End ***** -->
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ***** Newsletter Area Start ***** -->
 <section class="poca-newsletter-area bg-img bg-overlay pt-50 jarallax" style="background-image: url(../img/bg-img/15.jpg);">
