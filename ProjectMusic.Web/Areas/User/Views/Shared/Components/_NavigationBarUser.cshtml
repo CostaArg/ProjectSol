@@ -1,11 +1,18 @@
-﻿<!-- Main Header Start -->
+﻿<!-- Preloader -->
+<div id="preloader">
+    <div class="preloader-thumbnail">
+        <img src="./img/core-img/preloader.png" alt="">
+    </div>
+</div>
+
+<!-- Main Header Start -->
 <div class="main-header-area">
     <div class="classy-nav-container breakpoint-off">
         <!-- Classy Menu -->
         <nav class="classy-navbar justify-content-between" id="pocaNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="index.html"><img src="~/Content/theme/img/core-img/logo.png" alt=""></a>
+            <a class="nav-brand" href="../UserHome"><img src="~/Content/theme/img/core-img/logo.png" alt=""></a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">
@@ -17,11 +24,11 @@
                 <!-- Nav Start -->
                 <div class="classynav">
                     <ul id="nav">
-                        <li class="current-item"><a href="/index.html">Home</a></li>
-                        <li><a href="./podcast.html">Albums</a></li>
-                        <li><a href="./about.html">Orders</a></li>
-                        <li><a href="./about.html">About</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li class="current-item"><a href="../User/UserHome">Home</a></li>
+                        <li><a href="../User/UserAlbums">Albums</a></li>
+                        <li><a href="../User/UserOrder">Orders</a></li>
+                        <li><a href="../User/UserAbout">About</a></li>
+                        <li><a href="../User/UserContact">Contact</a></li>
                         @Html.Partial("_LoginPartial")
                     </ul>
                 </div>

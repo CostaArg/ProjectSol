@@ -244,7 +244,10 @@
     <Compile Include="Areas\User\Controllers\ArtistController.cs" />
     <Compile Include="Areas\User\Controllers\GenreController.cs" />
     <Compile Include="Areas\User\Controllers\SongController.cs" />
+    <Compile Include="Areas\User\Controllers\UserAboutController.cs" />
+    <Compile Include="Areas\User\Controllers\UserContactController.cs" />
     <Compile Include="Areas\User\Controllers\UserHomeController.cs" />
+    <Compile Include="Areas\User\Controllers\UserOrderController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\GiaPetamaController.cs" />
@@ -603,7 +606,9 @@
     <Content Include="Areas\User\Views\Album\Details.cshtml" />
     <Content Include="Areas\User\Views\Shared\Components\_FooterUser.cshtml" />
     <Content Include="Areas\User\Views\Shared\Components\_NavigationBarUser.cshtml" />
-    <Content Include="Areas\User\Views\Shared\Components\_HeaderUser.cshtml" />
+    <Content Include="Areas\User\Views\UserOrder\Index.cshtml" />
+    <Content Include="Areas\User\Views\UserAbout\Index.cshtml" />
+    <Content Include="Areas\User\Views\UserContact\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -696,8 +701,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_HomeLayout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
