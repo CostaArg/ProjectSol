@@ -8,7 +8,6 @@ namespace ProjectMusic.Web.Areas.User.Controllers
 {
     public class UserOrderController : Controller
     {
-        // GET: User/UserOrder
         public ActionResult Index()
         {
             return View();

@@ -18,6 +18,13 @@ namespace ProjectMusic.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
+            //routes.MapRoute(
+            //    name: "Areas",
+            //    url: "Areas/User/Controllers/{controller}/{action}/{id}",
+            //    defaults: new { controller = "UserHome", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

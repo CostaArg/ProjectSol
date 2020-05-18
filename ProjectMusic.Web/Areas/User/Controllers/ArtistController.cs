@@ -19,7 +19,6 @@ namespace ProjectMusic.Web.Areas.User.Controllers
     {
         private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
 
-        // GET: User/Artist
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
             var artists = UnitOfWork.Artists.GetAll();
@@ -49,7 +48,6 @@ namespace ProjectMusic.Web.Areas.User.Controllers
             return View(artists.ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: User/Artist/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
