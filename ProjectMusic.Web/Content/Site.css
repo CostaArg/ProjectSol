@@ -19,3 +19,28 @@
 .centerText {
     text-align: center;
 }
+
+.login-container {
+    display: flex;
+    margin-left: 400px;
+}
+
+.login-form-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.orange-button {
+    background-color: #f55555;
+    color: white;
+}
+
+.register-container {
+    display: flex;
+    margin-left: 400px;
+    flex-direction: column;
+}
+
+.external-login-container {
+    margin-top: 50px;
+}
