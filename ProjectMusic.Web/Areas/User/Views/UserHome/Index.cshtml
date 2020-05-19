@@ -6,6 +6,9 @@
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
 
+<!-- Paypal API -->
+<script src="https://www.paypal.com/sdk/js?client-id=AVysmG2b9yJwEocepwm8eMOcKrAwDQT91kZz1FFP18SmP62nKmr_jts6OOyOhBb0yIEwg22e0-NNy_uW"></script>
+
 <!-- ***** Welcome Area Start ***** -->
 <section class="welcome-area">
     <!-- Welcome Slides -->
@@ -17,8 +20,8 @@
                     <div class="col-12">
                         <!-- Welcome Text -->
                         <div class="welcome-text">
-                            <h2 data-animation="fadeInUp" data-delay="100ms">Subscribe Today</h2>
-                            <h5 data-animation="fadeInUp" data-delay="300ms">Please schedule a podcast post, to make it visible here.</h5>
+                            <h2 data-animation="fadeInUp" data-delay="100ms">New Release</h2>
+                            <h5 data-animation="fadeInUp" data-delay="300ms">Consider subscribing to not miss the latest releases!</h5>
                             <div class="welcome-btn-group">
                                 <a href="#" class="btn poca-btn m-2 ml-0 active" data-animation="fadeInUp" data-delay="500ms">Subscribe with iTunes</a>
                                 <a href="#" class="btn poca-btn btn-2 m-2" data-animation="fadeInUp" data-delay="700ms">Subscribe with RSS</a>
@@ -97,13 +100,13 @@
                             <img src="~/Content/theme/img/bg-img/5.jpg" alt="">
                         </div>
                         <div class="poca-music-content text-center">
-                            <a href="/user/album/details/@album.AlbumId">
+                            <a href="/User/Album/Details/@album.AlbumId">
                                 <h2>@Html.DisplayFor(modelItem => album.AlbumName)</h2>
                             </a>
                             <div class="music-meta-data">
                                 <p>By <a href="#" class="music-author">@album.Artist.ArtistName</a> | <a href="#" class="music-catagory">@album.Songs.First().Genres.First().GenreName</a></p>
                             </div>
-                            <span class="music-published-date">Listen to the Sample</span>
+                            <span class="music-published-date mb-2">Listen to the Sample</span>
                             <!-- Music Player -->
                             <div class="poca-music-player">
                                 <audio preload="auto" controls>
@@ -115,8 +118,29 @@
                             </div>
                             <!-- Likes, Share & Download -->
                             <div class="likes-share-download d-flex align-items-center justify-content-between">
-                                <a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Now</a>
+                                <button type="button" class="btn" data-toggle="modal" data-target="#modal-@album.AlbumId"> <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now</button>
                                 <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal-@album.AlbumId" tabindex="-1" role="dialog" aria-labelledby="modal-short-title" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modal-long-title">@Html.DisplayFor(modelItem => album.AlbumName)</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div id="paypal-container-@album.AlbumId" class="modal-body">
+                                <script>paypal.Buttons().render("#paypal-container-@album.AlbumId");</script>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn">Save changes</button>
                             </div>
                         </div>
                     </div>
