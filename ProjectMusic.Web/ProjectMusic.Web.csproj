@@ -259,6 +259,7 @@
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Controllers\ExitController.cs" />
     <Compile Include="Controllers\GiaPetamaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />

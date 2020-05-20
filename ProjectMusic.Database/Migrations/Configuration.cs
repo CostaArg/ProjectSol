@@ -1,5 +1,7 @@
 ﻿namespace ProjectMusic.Database.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using ProjectMusic.Entities;
     using ProjectMusic.Entities.Domain;
     using System;
@@ -84,6 +86,26 @@
             context.Albums.AddOrUpdate(x => x.AlbumId, al1, al2, al3, al4, al5);
             context.Genres.AddOrUpdate(x => x.GenreId, g1, g2, g3, g4, g5);
             context.Songs.AddOrUpdate(x => x.SongId, s1, s2, s3, s4, s5);
+
+            //Roles
+
+            if (!context.Roles.Any(roles => roles.Name == "User"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "User" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(roles => roles.Name == "Admin"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admin" };
+
+                manager.Create(role);
+            }
 
             #endregion
 
