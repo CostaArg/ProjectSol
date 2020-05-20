@@ -25,11 +25,11 @@
             Artist ar4 = new Artist() { ArtistName = "The Clash" };
             Artist ar5 = new Artist() { ArtistName = "John Denver" };
 
-            Album al1 = new Album() { AlbumName = "The Slim Shady LP" };
-            Album al2 = new Album() { AlbumName = "Strauss, J.: An der schonen blauen Donau (The Blue Danube)" };
-            Album al3 = new Album() { AlbumName = "Fear Inoculum" };
-            Album al4 = new Album() { AlbumName = "Combat Rock" };
-            Album al5 = new Album() { AlbumName = "Poems, Prayers and Promises" };
+            Album al1 = new Album() { AlbumName = "The Slim Shady LP", AlbumPrice = 19.99M };
+            Album al2 = new Album() { AlbumName = "Strauss, J.: An der schonen blauen Donau (The Blue Danube)", AlbumPrice = 24.99M };
+            Album al3 = new Album() { AlbumName = "Fear Inoculum", AlbumPrice = 14.99M };
+            Album al4 = new Album() { AlbumName = "Combat Rock", AlbumPrice = 27.99M };
+            Album al5 = new Album() { AlbumName = "Poems, Prayers and Promises", AlbumPrice = 11.99M };
 
             Song s1 = new Song() { SongName = "My Name Is" };
             Song s2 = new Song() { SongName = "An der schonen blauen Donau, Op. 314" };

@@ -14,6 +14,7 @@ namespace ProjectMusic.Entities.Domain
         [Display(Name = "Album Name")]
         public string AlbumName { get; set; }
         public string AlbumPhotoUrl { get; set; }
+        public decimal AlbumPrice { get; set; }
 
 
         //multiple albums can belong to one artist
