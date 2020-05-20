@@ -33,8 +33,6 @@ namespace ProjectMusic.Web
         // Authority is the URL for authority, composed by Microsoft identity platform endpoint and the tenant name (e.g. https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0)
         string authority = String.Format(System.Globalization.CultureInfo.InvariantCulture, System.Configuration.ConfigurationManager.AppSettings["Authority"], tenant);
 
-
-
         public void ConfigureAuth(IAppBuilder app)
         {
             // Configure the db context, user manager and signin manager to use a single instance per request
@@ -68,20 +66,6 @@ namespace ProjectMusic.Web
             // This is similar to the RememberMe option when you log in.
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
-            //        app.UseTwitterAuthentication(new TwitterAuthenticationOptions
-            //        {
-            //            ConsumerKey = "vpjXLGkLYfkjNEYVEo1WETePc",
-            //            ConsumerSecret = "612AQ8LHnYrcojjXjxbD2NiRW1FrINcVOvHfNOlYk5uxml1Nl7",
-            //            BackchannelCertificateValidator = new CertificateSubjectKeyIdentifierValidator(new[]
-            //{
-            //    "A5EF0B11CEC04103A34A659048B21CE0572D7D47", // VeriSign Class 3 Secure Server CA - G2
-            //    "0D445C165344C1827E1D20AB25F40163D8BE79A5", // VeriSign Class 3 Secure Server CA - G3
-            //    "7FD365A7C2DDECBBF03009F34339FA02AF333133", // VeriSign Class 3 Public Primary Certification Authority - G5
-            //    "39A55D933676616E73A761DFA16A7E59CDE66FAD", // Symantec Class 3 Secure Server CA - G4
-            //    "5168FF90AF0207753CCCD9656462A212B859723B", //DigiCert SHA2 High Assurance Server C‎A 
-            //    "B13EC36903F8BF4701D498261A0802EF63642BC3" //DigiCert High Assurance EV Root CA
-            //})
-            //        });
 
             #region Microsoft Authentication
 

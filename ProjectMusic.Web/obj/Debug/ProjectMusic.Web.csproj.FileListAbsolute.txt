@@ -459,3 +459,9 @@ C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Web\obj\Debug\ProjectMusic
 C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Web\obj\Debug\ProjectMusic.Web.csproj.CopyComplete
 C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Web\obj\Debug\ProjectMusic.Web.dll
 C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Web\obj\Debug\ProjectMusic.Web.pdb
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Web\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Web\bin\Microsoft.AspNet.SignalR.Core.pdb
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Web\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.pdb
+C:\Users\Costa\source\repos\ProjectMusic\ProjectMusic.Web\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
