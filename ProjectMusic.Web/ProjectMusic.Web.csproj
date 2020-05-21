@@ -461,7 +461,6 @@
     <Content Include="Areas\Admin\Views\Song\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <Content Include="Areas\User\Views\UserHome\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_NavBar.cshtml" />
     <Content Include="Content\theme\.sass-cache\0a3dd42e7e252368368c10cef3407d815ca92c9b\_color.scssc" />
     <Content Include="Content\theme\.sass-cache\0a3dd42e7e252368368c10cef3407d815ca92c9b\_fonts.scssc" />
     <Content Include="Content\theme\.sass-cache\0a3dd42e7e252368368c10cef3407d815ca92c9b\_responsive.scssc" />
@@ -622,6 +621,8 @@
     <Content Include="Areas\User\Views\UserAbout\Index.cshtml" />
     <Content Include="Areas\User\Views\UserContact\Index.cshtml" />
     <Content Include="Areas\User\Views\UserThankYou\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Components\_NavigationBarAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Components\_SideBarAdmin.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
