@@ -17,28 +17,22 @@
     <link href="~/Content/adminTheme/main.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container-fluid">
 
-        <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 
-            <div class="container-fluid">
-                @RenderPage("~/Areas/Admin/Views/Shared/Components/_NavigationBarAdmin.cshtml")
-            </div>
-
-            <div class="container-fluid">
-                @RenderPage("~/Areas/Admin/Views/Shared/Components/_SideBarAdmin.cshtml")
-            </div>
-
-            <div class="container-fluid">
-                @RenderBody()
-            </div>
-
+        <div>
+            @RenderPage("~/Areas/Admin/Views/Shared/Components/_NavigationBarAdmin.cshtml")
         </div>
 
+        <div>
+            @RenderBody()
         </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

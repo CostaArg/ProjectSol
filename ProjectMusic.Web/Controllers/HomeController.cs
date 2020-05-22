@@ -10,7 +10,7 @@ namespace ProjectMusic.Web.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("UserHome", "User");
         }
     }
 }

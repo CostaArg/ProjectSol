@@ -622,7 +622,6 @@
     <Content Include="Areas\User\Views\UserContact\Index.cshtml" />
     <Content Include="Areas\User\Views\UserThankYou\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Components\_NavigationBarAdmin.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\Components\_SideBarAdmin.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
