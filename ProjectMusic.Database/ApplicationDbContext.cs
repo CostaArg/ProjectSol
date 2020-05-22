@@ -11,9 +11,6 @@ using System.Threading.Tasks;
 
 namespace ProjectMusic.Database
 {
-
-
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -26,8 +23,6 @@ namespace ProjectMusic.Database
             return new ApplicationDbContext();
         }
 
-
-
         #region DATA TABLES
 
         public DbSet<Song> Songs { get; set; }
@@ -35,12 +30,7 @@ namespace ProjectMusic.Database
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Genre> Genres { get; set; }
 
-        
-
         #endregion
 
     }
-
-
-
 }

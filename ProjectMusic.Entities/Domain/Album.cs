@@ -25,6 +25,6 @@ namespace ProjectMusic.Entities.Domain
         //multiple albums can have multiple songs
         public virtual ICollection<Song> Songs { get; set; }
 
-        public virtual ICollection<ApplicationUser> Users { get; set; }
+        //public virtual ICollection<ApplicationUser> Users { get; set; }
     }
 }
