@@ -82,7 +82,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice")] Album album)
+        public ActionResult Create([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -118,7 +118,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice")] Album album)
+        public ActionResult Edit([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases")] Album album)
         {
             if (ModelState.IsValid)
             {

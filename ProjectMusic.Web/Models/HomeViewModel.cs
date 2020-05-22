@@ -11,7 +11,5 @@ namespace ProjectMusic.Web.Models
     {
         public List<Album> Albums{ get; set; }
         public List<string> GenreNames{ get; set; }
-      
-
     }
 }

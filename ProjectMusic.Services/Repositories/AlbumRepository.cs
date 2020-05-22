@@ -25,14 +25,7 @@ namespace ProjectMusic.Services.Repositories
 
         public IEnumerable<Album> GetAlbumsWithSongs()
         {
-
-
-           return ApplicationDbContext.Albums.Include(x => x.Songs).ToList();
-        }
-
-        public IEnumerable<Album> GetDesc()
-        {
-            throw new NotImplementedException();
+            return ApplicationDbContext.Albums.Include(x => x.Songs).ToList();
         }
     }
 }

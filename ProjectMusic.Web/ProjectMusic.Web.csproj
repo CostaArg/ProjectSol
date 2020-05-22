@@ -243,6 +243,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminStatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AlbumController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArtistController.cs" />
     <Compile Include="Areas\Admin\Controllers\GenreController.cs" />
@@ -270,6 +271,7 @@
     <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\StatsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalR\Hubs\ChatHub.cs" />
     <Compile Include="Startup.cs" />
@@ -622,6 +624,9 @@
     <Content Include="Areas\User\Views\UserContact\Index.cshtml" />
     <Content Include="Areas\User\Views\UserThankYou\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Components\_NavigationBarAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminStats\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Components\_UIThemeAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\Components\_SidePanelAdmin.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

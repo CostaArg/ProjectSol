@@ -25,9 +25,19 @@
         </div>
 
         <div>
-            @RenderBody()
+            @RenderPage("~/Areas/Admin/Views/Shared/Components/_UIThemeAdmin.cshtml")
         </div>
 
+        <div class="app-main">
+
+            <div>
+                @RenderPage("~/Areas/Admin/Views/Shared/Components/_SidePanelAdmin.cshtml")
+            </div>
+
+            <div>
+                @RenderBody()
+            </div>
+        </div>
     </div>
 
 
