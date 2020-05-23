@@ -12,18 +12,31 @@
     var bestSellingAlbums = Model.Albums.OrderByDescending(x => x.AlbumPurchases);
     var bestSellingAlbum = Model.Albums.OrderByDescending(x => x.AlbumPurchases).Select(x => x.AlbumName).FirstOrDefault();
     var bestSellingNum = Model.Albums.OrderByDescending(x => x.AlbumPurchases).Select(x => x.AlbumPurchases).FirstOrDefault();
+    var albumAmount = Model.Albums.Count();
 }
 
 @foreach (var album in bestSellingAlbums)
 {
-    <h4>@album.AlbumName</h4>
-    <div>@album.AlbumPurchases</div>
+    <h4>Album Name: @album.AlbumName</h4>
+    <h4>Album Purchases: @album.AlbumPurchases</h4>
+    <h4>Album Songs: @album.Songs.Count()</h4>
 }
 
-<h1>Best-Selling Album: @bestSellingAlbum with @bestSellingNum sales</h1>
+<h1>Albums</h1>
+<h4>@albumAmount albums in our database</h4>
+<h4>Best-Selling Album: @bestSellingAlbum with @bestSellingNum sales</h4>
 
 
+@{
+    var usersAmount = Model.Users.Count();
+}
+
+<h1>@usersAmount registered users</h1>
+
+
+<h1>User Table</h1>
 @foreach (var user in Model.Users)
 {
-    <h1>@user.UserName</h1>
+    <h4>User Id: @user.Id</h4>
+    <h4>User Name: @user.UserName</h4>
 }
