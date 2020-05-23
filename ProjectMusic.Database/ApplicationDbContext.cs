@@ -31,5 +31,6 @@ namespace ProjectMusic.Database
         public DbSet<Genre> Genres { get; set; }
 
         #endregion
+
     }
 }

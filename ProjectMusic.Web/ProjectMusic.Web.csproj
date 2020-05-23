@@ -245,6 +245,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminStatsController.cs" />
     <Compile Include="Areas\Admin\Controllers\AlbumController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AppUserAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArtistController.cs" />
     <Compile Include="Areas\Admin\Controllers\GenreController.cs" />
     <Compile Include="Areas\Admin\Controllers\SongController.cs" />
@@ -259,7 +260,6 @@
     <Compile Include="Areas\User\Controllers\UserThankYouController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AppUserController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\ExitController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -627,6 +627,11 @@
     <Content Include="Areas\Admin\Views\AdminStats\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Components\_UIThemeAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Components\_SidePanelAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUserAdmin\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUserAdmin\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUserAdmin\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUserAdmin\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\AppUserAdmin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -753,11 +758,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Shared\_ChatLayout.cshtml" />
-    <Content Include="Views\AppUser\Create.cshtml" />
-    <Content Include="Views\AppUser\Delete.cshtml" />
-    <Content Include="Views\AppUser\Details.cshtml" />
-    <Content Include="Views\AppUser\Edit.cshtml" />
-    <Content Include="Views\AppUser\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

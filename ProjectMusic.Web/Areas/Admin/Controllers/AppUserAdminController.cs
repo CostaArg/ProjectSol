@@ -9,19 +9,19 @@ using System.Web.Mvc;
 using ProjectMusic.Database;
 using ProjectMusic.Entities.Domain;
 
-namespace ProjectMusic.Web.Controllers
+namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
-    public class AppUserController : Controller
+    public class AppUserAdminController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: AppUser
+        // GET: Admin/AppUserAdmin
         public ActionResult Index()
         {
             return View(db.Users.ToList());
         }
 
-        // GET: AppUser/Details/5
+        // GET: Admin/AppUserAdmin/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,13 +36,13 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // GET: AppUser/Create
+        // GET: Admin/AppUserAdmin/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AppUser/Create
+        // POST: Admin/AppUserAdmin/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -59,7 +59,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // GET: AppUser/Edit/5
+        // GET: Admin/AppUserAdmin/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // POST: AppUser/Edit/5
+        // POST: Admin/AppUserAdmin/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -90,7 +90,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // GET: AppUser/Delete/5
+        // GET: Admin/AppUserAdmin/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // POST: AppUser/Delete/5
+        // POST: Admin/AppUserAdmin/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
