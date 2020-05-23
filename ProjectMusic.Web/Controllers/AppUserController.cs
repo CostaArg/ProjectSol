@@ -11,17 +11,17 @@ using ProjectMusic.Entities.Domain;
 
 namespace ProjectMusic.Web.Controllers
 {
-    public class GiaPetamaController : Controller
+    public class AppUserController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: GiaPetama
+        // GET: AppUser
         public ActionResult Index()
         {
             return View(db.Users.ToList());
         }
 
-        // GET: GiaPetama/Details/5
+        // GET: AppUser/Details/5
         public ActionResult Details(string id)
         {
             if (id == null)
@@ -36,13 +36,13 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // GET: GiaPetama/Create
+        // GET: AppUser/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: GiaPetama/Create
+        // POST: AppUser/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -59,7 +59,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // GET: GiaPetama/Edit/5
+        // GET: AppUser/Edit/5
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // POST: GiaPetama/Edit/5
+        // POST: AppUser/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -90,7 +90,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // GET: GiaPetama/Delete/5
+        // GET: AppUser/Delete/5
         public ActionResult Delete(string id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace ProjectMusic.Web.Controllers
             return View(applicationUser);
         }
 
-        // POST: GiaPetama/Delete/5
+        // POST: AppUser/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)

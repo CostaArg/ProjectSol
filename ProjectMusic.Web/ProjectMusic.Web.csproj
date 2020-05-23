@@ -259,9 +259,9 @@
     <Compile Include="Areas\User\Controllers\UserThankYouController.cs" />
     <Compile Include="Areas\User\UserAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppUserController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\ExitController.cs" />
-    <Compile Include="Controllers\GiaPetamaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -750,14 +750,14 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\GiaPetama\Create.cshtml" />
-    <Content Include="Views\GiaPetama\Delete.cshtml" />
-    <Content Include="Views\GiaPetama\Details.cshtml" />
-    <Content Include="Views\GiaPetama\Edit.cshtml" />
-    <Content Include="Views\GiaPetama\Index.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Chat\Index.cshtml" />
     <Content Include="Views\Shared\_ChatLayout.cshtml" />
+    <Content Include="Views\AppUser\Create.cshtml" />
+    <Content Include="Views\AppUser\Delete.cshtml" />
+    <Content Include="Views\AppUser\Details.cshtml" />
+    <Content Include="Views\AppUser\Edit.cshtml" />
+    <Content Include="Views\AppUser\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
