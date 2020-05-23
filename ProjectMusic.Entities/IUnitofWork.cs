@@ -13,6 +13,7 @@ namespace ProjectMusic.Entities
         ISongRepository Songs { get; }
         IGenreRepository Genres { get; }
         IArtistRepository Artists { get; }
+        IUserRepository Users { get; }
         int Complete();
     }
 }

@@ -6,6 +6,7 @@
 
 @{
     ViewBag.Title = "All Albums";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
 @{
@@ -16,6 +17,7 @@
     SelectListItem a5 = new SelectListItem() { Text = "100", Value = "100" };
     List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
 }
+
 
 <h2>All Albums</h2>
 
@@ -37,7 +39,7 @@
     </div>
 </div>
 
-<a class="btn btn-primary" href="/Admin/Song/Create">Create New</a>
+<a class="btn btn-primary" href="/Admin/Album/Create">Create New</a>
 
 <table class="table mt-2">
     <tr>

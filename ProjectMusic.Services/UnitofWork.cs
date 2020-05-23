@@ -21,12 +21,14 @@ namespace ProjectMusic.Services
             Artists = new ArtistRepository(_context);
             Genres = new GenreRepository(_context);
             Songs = new SongRepository(_context);
+            Users = new UserRepository(_context);
         }
 
         public IAlbumRepository Albums { get; private set; }
         public IArtistRepository Artists { get; private set; }
         public IGenreRepository Genres { get; private set; }
         public ISongRepository Songs { get; private set; }
+        public IUserRepository Users { get; private set; }
 
         public int Complete()
         {

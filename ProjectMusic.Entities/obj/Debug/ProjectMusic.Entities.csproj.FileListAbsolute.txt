@@ -44,3 +44,4 @@ C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Entities\bin\Debug\Microso
 C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.csproj.CopyComplete
 C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.dll
 C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.pdb
+C:\Users\Costa\source\repos\projectMusic\ProjectMusic.Entities\obj\Debug\ProjectMusic.Entities.csprojAssemblyReference.cache

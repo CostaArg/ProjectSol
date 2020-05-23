@@ -44,7 +44,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
                 songs = songs.Where(x => x.SongName.ToUpper().Contains(searchName.ToUpper()));
             }
 
-            int pageSize = pSize ?? 3;
+            int pageSize = pSize ?? 5;
             int pageNumber = page ?? 1;
 
             return View(songs.ToPagedList(pageNumber, pageSize));

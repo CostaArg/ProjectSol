@@ -6,22 +6,24 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+<h1 style="margin-bottom: 20px">Best-Selling Albums</h1>
 
-    <div style="margin: 400px; border: 2px solid black; padding: 20px;">
+@{
+    var bestSellingAlbums = Model.Albums.OrderByDescending(x => x.AlbumPurchases);
+    var bestSellingAlbum = Model.Albums.OrderByDescending(x => x.AlbumPurchases).Select(x => x.AlbumName).FirstOrDefault();
+    var bestSellingNum = Model.Albums.OrderByDescending(x => x.AlbumPurchases).Select(x => x.AlbumPurchases).FirstOrDefault();
+}
 
-        <h1 style="margin-bottom: 20px">Best-Selling Albums</h1>
+@foreach (var album in bestSellingAlbums)
+{
+    <h4>@album.AlbumName</h4>
+    <div>@album.AlbumPurchases</div>
+}
 
-        @{
-            var bestSellingAlbums = Model.Albums.OrderByDescending(x => x.AlbumPurchases);
-            var bestSellingAlbum = Model.Albums.OrderByDescending(x => x.AlbumPurchases).Select(x => x.AlbumName).FirstOrDefault();
-            var bestSellingNum = Model.Albums.OrderByDescending(x => x.AlbumPurchases).Select(x => x.AlbumPurchases).FirstOrDefault();
-        }
+<h1>Best-Selling Album: @bestSellingAlbum with @bestSellingNum sales</h1>
 
-        @foreach (var album in bestSellingAlbums)
-        {
-            <h4>@album.AlbumName</h4>
-            <div>@album.AlbumPurchases</div>
-        }
 
-        <h1>Best-Selling Album: @bestSellingAlbum with @bestSellingNum sales</h1>
-    </div>
+@foreach (var user in Model.Users)
+{
+    <h1>@user.UserName</h1>
+}

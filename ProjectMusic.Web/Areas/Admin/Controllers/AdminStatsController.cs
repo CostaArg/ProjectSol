@@ -18,9 +18,12 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         {
             var albums = UnitOfWork.Albums.GetAlbumsWithSongs();
 
+            var users = UnitOfWork.Users.GetAll();
+
             StatsViewModel vm = new StatsViewModel();
 
             vm.Albums = albums.ToList();
+            vm.Users = users.ToList();
 
             return View(vm);
         }
