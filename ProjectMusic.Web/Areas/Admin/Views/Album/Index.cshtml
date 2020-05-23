@@ -34,7 +34,7 @@
             @Html.TextBox("sortOrder", str, new { type = "hidden" })
 
             @Html.DropDownList("pSize", items, new { @class = "form-control" })
-            <input type="submit" value="Search" class="btn btn-primary" />
+            <input type="submit" value="Search" class="btn btn-primary ml-2" />
         }
     </div>
 </div>
@@ -51,9 +51,12 @@
                 Album Name
             </div>
             <div class="float-left ml-2">
-                @Html.ActionLink("Sort", "Index", "Album", new { sortOrder = ViewBag.NameSort }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Sort A-Z", "Index", "Album", new { sortOrder = ViewBag.NameSort }, new { @class = "badge badge-primary" })
             </div>
         </th>
+        <th>Album Id</th>
+        <th>Album Price</th>
+        <th>Album Purchases</th>
         <th></th>
     </tr>
 
@@ -66,10 +69,13 @@
             <td>
                 @Html.DisplayFor(modelItem => album.AlbumName)
             </td>
+            <td>@Html.DisplayFor(modelItem => album.AlbumId)</td>
+            <td>@Html.DisplayFor(modelItem => album.AlbumPrice)</td>
+            <td>@Html.DisplayFor(modelItem => album.AlbumPurchases)</td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = album.AlbumId }) |
-                @Html.ActionLink("Details", "Details", new { id = album.AlbumId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = album.AlbumId })
+                @Html.ActionLink("Edit", "Edit", new { id = album.AlbumId }, new { @class = "badge badge-info"}) |
+                @Html.ActionLink("Details", "Details", new { id = album.AlbumId }, new { @class = "badge badge-success"}) |
+                @Html.ActionLink("Delete", "Delete", new { id = album.AlbumId }, new { @class = "badge badge-danger"})
             </td>
         </tr>
     }

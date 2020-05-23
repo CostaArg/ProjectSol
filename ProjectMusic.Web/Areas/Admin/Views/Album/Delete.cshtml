@@ -13,6 +13,14 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.AlbumId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumId)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.AlbumName)
         </dt>
 
@@ -28,6 +36,22 @@
             @Html.DisplayFor(model => model.AlbumPhotoUrl)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumPurchases)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumPurchases)
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm())
@@ -35,7 +59,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
             @Html.ActionLink("Back to List", "Index")
         </div>
     }

@@ -11,6 +11,15 @@
     <h4>Album</h4>
     <hr />
     <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumId)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.AlbumName)
         </dt>
@@ -25,6 +34,22 @@
 
         <dd>
             @Html.DisplayFor(model => model.AlbumPhotoUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlbumPurchases)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlbumPurchases)
         </dd>
 
     </dl>
