@@ -80,6 +80,25 @@
             al4.Songs = new List<Song>() { s4 };
             al5.Songs = new List<Song>() { s5 };
 
+            //Roles
+            string adminRole = "Admin";
+            string adminEmail = "admin@yahoo.com";
+            string adminPass = "admin123";
+
+            if (!context.Users.Any(user => user.UserName == "Admin"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+
+                var adminAccount = new ApplicationUser { UserName = adminRole, Email = adminEmail };
+
+                manager.Create(adminAccount, adminPass);
+
+                Order firstOrder = new Order() { User = adminAccount, Album = al1, DatePurchased = DateTime.Now };
+
+                context.Orders.AddOrUpdate(x => x.OrderId, firstOrder);
+            }
+
             //Upserting
 
             context.Artists.AddOrUpdate(x => x.ArtistId, ar1, ar2, ar3, ar4, ar5);
@@ -87,25 +106,23 @@
             context.Genres.AddOrUpdate(x => x.GenreId, g1, g2, g3, g4, g5);
             context.Songs.AddOrUpdate(x => x.SongId, s1, s2, s3, s4, s5);
 
-            //Roles
+            //if (!context.Roles.Any(roles => roles.Name == "User"))
+            //{
+            //    var store = new RoleStore<IdentityRole>(context);
+            //    var manager = new RoleManager<IdentityRole>(store);
+            //    var role = new IdentityRole { Name = "User" };
 
-            if (!context.Roles.Any(roles => roles.Name == "User"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "User" };
+            //    manager.Create(role);
+            //}
 
-                manager.Create(role);
-            }
+            //if (!context.Roles.Any(roles => roles.Name == "Admin"))
+            //{
+            //    var store = new RoleStore<IdentityRole>(context);
+            //    var manager = new RoleManager<IdentityRole>(store);
+            //    var role = new IdentityRole { Name = "Admin" };
 
-            if (!context.Roles.Any(roles => roles.Name == "Admin"))
-            {
-                var store = new RoleStore<IdentityRole>(context);
-                var manager = new RoleManager<IdentityRole>(store);
-                var role = new IdentityRole { Name = "Admin" };
-
-                manager.Create(role);
-            }
+            //    manager.Create(role);
+            //}
 
             #endregion
 

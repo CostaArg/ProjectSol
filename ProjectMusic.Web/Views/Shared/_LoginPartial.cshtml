@@ -3,30 +3,27 @@
 {
     <form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post">
 
-            @Html.AntiForgeryToken()
-            <li class="float-left">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
-            <li><input type="submit" value="Logout" class="btn" /></li>
-        </form>
+        @Html.AntiForgeryToken()
+        <li class="float-left">@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+        <li><input type="submit" value="Logout" class="btn" /></li>
+    </form>
 
-        <form action="/Exit/ClearCookies" method="post">
-            <li><input type="submit" value="Jugaad" class="btn" /></li>
-        </form>
+    <form action="/Exit/ClearCookies" method="post">
+        <li><input type="submit" value="Jugaad" class="btn" /></li>
+    </form>
 
     @*using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
         {
             @Html.AntiForgeryToken()
-
             <div class="show-reg-form  avatar-img text-white"><a class="text-white" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></div>
             <div> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "show-reg-form avatar-img" })</div>
         }*@
 
     @*<form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post">
-
-        @Html.AntiForgeryToken()
-
-        <div class="show-reg-form  avatar-img text-white"><a class="text-white" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></div>
-        <div> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "show-reg-form avatar-img" })</div>
-    </form>*@
+            @Html.AntiForgeryToken()
+            <div class="show-reg-form  avatar-img text-white"><a class="text-white" href="javascript:document.getElementById('logoutForm').submit()">Log off</a></div>
+            <div> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "show-reg-form avatar-img" })</div>
+        </form>*@
 
 }
 else

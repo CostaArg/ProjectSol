@@ -1,7 +1,5 @@
 ﻿<!DOCTYPE html>
 
-@Scripts.Render("~/bundles/modernizr")
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -12,9 +10,6 @@
         @RenderBody()
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

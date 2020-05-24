@@ -61,6 +61,7 @@
     <Compile Include="Domain\ApplicationUser.cs" />
     <Compile Include="Domain\Artist.cs" />
     <Compile Include="Domain\Genre.cs" />
+    <Compile Include="Domain\Order.cs" />
     <Compile Include="IRepositories\IAlbumRepository.cs" />
     <Compile Include="IRepositories\IArtistRepository.cs" />
     <Compile Include="IRepositories\IGenreRepository.cs" />
