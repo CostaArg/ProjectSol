@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
+
     public class AdminStatsController : Controller
     {
         private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
@@ -26,6 +27,15 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             vm.Users = users.ToList();
 
             return View(vm);
+        }
+
+        public ActionResult GetData()
+        {
+            var albums = UnitOfWork.Albums.GetAlbumsWithSongs();
+
+            var selection = albums.Select(x => new { x.AlbumName, x.AlbumPurchases });
+
+            return Json(selection, JsonRequestBehavior.AllowGet);
         }
     }
 }
