@@ -3,15 +3,15 @@
     var chat = $.connection.chatHub;
     // Create a function that the hub can call back to display messages.
     chat.client.addNewMessageToPage = function (name, message) {
-        if (name == "admin@yahoo.com") {
+        if (name == "admin@hotmail.com") {
             // Add the message to the page.
-            $('#discussion').append('<p style="color:green; text-align:left; width:500px"><strong><i class="fas fa-user-circle"></i>'
-                + $('#displayname').val() + ': </strong> ' + htmlEncode(message) + '</p>');
+            $('#discussion').append('<p>' + '<div class="badge badge-pill badge-success mr-1"> <i class="fas fa-user-circle mr-2"></i>'
+                + $('#displayname').val() + '</div>' + htmlEncode(message) + '</p>');
         }
         else {
             // Add the message to the page.
-            $('#discussion').append('<p style="color:blue;text-align:right;"><strong><i class="fas fa-user-circle"></i>'
-                + $('#displayname').val() + ': </strong> ' + htmlEncode(message) + '</p>');
+            $('#discussion').append('<p>' + '<div class="badge badge-pill badge-primary mr-1"> <i class="fas fa-user-circle mr-2"></i>'
+                + $('#displayname').val() + '</div>' + htmlEncode(message) + '</p>');
         }
     };
     // Set initial focus to message input box.

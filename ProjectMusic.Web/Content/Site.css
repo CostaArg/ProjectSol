@@ -48,3 +48,15 @@
 .thank-you-title {
     margin-left: 400px;
 }
+
+div.panel-body {
+    overflow: scroll;
+    background-color: lightgray;
+}
+
+/*.message-right {
+    display: flex;
+    color: blue;
+    text-align: right;
+    margin-left: 100px;
+}*/

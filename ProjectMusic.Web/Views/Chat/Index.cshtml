@@ -5,45 +5,10 @@
     Layout = "~/Views/Shared/_ChatLayout.cshtml";
 }
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
-
-<!-- ***** Breadcrumb Area Start ***** -->
-@*<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(../Content/theme/img/bg-img/2.jpg);">
-    <div class="container h-100">
-        <div class="row h-100 align-items-center">
-            <div class="col-12">
-                <h2 class="title mt-70">Contact</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="breadcumb--con">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>*@
-<!-- ***** Breadcrumb Area End ***** -->
-
-<style>
-    div.panel-body {
-        overflow: scroll;
-        background: url('http://subtlepatterns.com/patterns/geometry2.png');
-    }
-</style>
-<h2>ChatBox</h2>
+<h2>Chat</h2>
 <div class="chat-panel panel panel-default">
-    <div class="panel-heading">
-        ChatBox using SingalR
-        <i class="fa fa-paper-plane fa-fw"></i>
+    <div class="panel-heading mb-2">
+        Powered by SingalR
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body" id="chat" style="height:250px;">
@@ -53,12 +18,11 @@
     </div>
     <!-- /.panel-body -->
     <div class="panel-footer">
-        <div class="input-group">
+        <div class="input-group mt-2">
             <input id="message" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." />
 
-            <span class="input-group-btn">
-                <input type="button" class="btn btn-warning btn-sm" id="sendmessage" value="Send">
-            </span>
+                <button id="sendmessage" value="Send" class="btn orange-button ml-2 mr-2 mt"><i class="fa fa-paper-plane fa-fw"></i> Send</button>
+
         </div>
     </div>
 </div>
