@@ -3,7 +3,7 @@
         type: "GET",
         contentType: "application/json",
         //data: "{entity:" + JSON.stringify(entity) + "}",
-        url: "/AdminStats/GetData",
+        url: "/AdminStats/GetTopFiveAlbums",
         success: function (data) {
 
             var albumNames = [];
@@ -35,6 +35,59 @@
                 options: {
                     responsive: false,
                     maintainAspectRatio: false
+                }
+            });
+        },
+        error: function (result) {
+            alert("Something went wrong");
+        }
+    });
+    $.ajax({
+        type: "GET",
+        contentType: "application/json",
+        //data: "{entity:" + JSON.stringify(entity) + "}",
+        url: "/AdminStats/GetTopFiveUsers",
+        success: function (data) {
+
+            console.log(data);
+
+            var userNames = [];
+            var albumPurchases = [];
+
+            data.forEach(element => {
+                userNames.push(element.UserName);
+                albumPurchases.push(element.Count);
+            });
+
+            var ctx = document.getElementById('barChart');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: userNames,
+                    datasets: [{
+                        label: '# of Album Purchases',
+                        data: albumPurchases,
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 206, 86)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: false,
+                    maintainAspectRatio: false,
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }],
+                        xAxes: [{
+                            display: true
+                        }]
+                    }
                 }
             });
         },

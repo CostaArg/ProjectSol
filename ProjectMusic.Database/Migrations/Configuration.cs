@@ -85,6 +85,14 @@
             string adminEmail = "admin@yahoo.com";
             string adminPass = "admin123";
 
+            string user1Role = "Dimitris";
+            string user1Email = "dimitris@gmail.com";
+            string user1Pass = "dokimi123";
+
+            string user2Role = "Giorgos";
+            string user2Email = "giorgos@hotmail.com";
+            string user2Pass = "test123";
+
             if (!context.Users.Any(user => user.UserName == "Admin"))
             {
                 var store = new UserStore<ApplicationUser>(context);
@@ -97,6 +105,37 @@
                 Order firstOrder = new Order() { User = adminAccount, Album = al1, DatePurchased = DateTime.Now };
 
                 context.Orders.AddOrUpdate(x => x.OrderId, firstOrder);
+            }
+
+            if (!context.Users.Any(user => user.UserName == "Dimitris"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+
+                var user1Account = new ApplicationUser { UserName = user1Role, Email = user1Email };
+
+                manager.Create(user1Account, user1Pass);
+
+                Order firstOrder = new Order() { User = user1Account, Album = al1, DatePurchased = DateTime.Now };
+                Order secondOrder = new Order() { User = user1Account, Album = al3, DatePurchased = DateTime.Now };
+                Order thirdOrder = new Order() { User = user1Account, Album = al2, DatePurchased = DateTime.Now };
+
+                context.Orders.AddOrUpdate(x => x.OrderId, firstOrder, secondOrder, thirdOrder);
+            }
+
+            if (!context.Users.Any(user => user.UserName == "Giorgos"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+
+                var user2Account = new ApplicationUser { UserName = user2Role, Email = user2Email };
+
+                manager.Create(user2Account, user2Pass);
+
+                Order firstOrder = new Order() { User = user2Account, Album = al2, DatePurchased = DateTime.Now };
+                Order secondOrder = new Order() { User = user2Account, Album = al1, DatePurchased = DateTime.Now };
+
+                context.Orders.AddOrUpdate(x => x.OrderId, firstOrder, secondOrder);
             }
 
             //Upserting

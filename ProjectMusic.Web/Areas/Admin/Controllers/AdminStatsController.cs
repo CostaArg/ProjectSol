@@ -29,13 +29,25 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(vm);
         }
 
-        public ActionResult GetData()
+        public ActionResult GetTopFiveAlbums()
         {
             var albums = UnitOfWork.Albums.GetAlbumsWithSongs();
 
-            var selection = albums.Select(x => new { x.AlbumName, x.AlbumPurchases });
+            var topFiveAlbums = albums.OrderByDescending(x=>x.AlbumPurchases).Take(5).Select(x => new { x.AlbumName, x.AlbumPurchases });
 
-            return Json(selection, JsonRequestBehavior.AllowGet);
+            return Json(topFiveAlbums, JsonRequestBehavior.AllowGet);
         }
+
+
+        public ActionResult GetTopFiveUsers()
+        {
+            var users = UnitOfWork.Users.GetAll();
+
+            var topFiveUsers = users.OrderByDescending(x => x.Orders.Count).Select(x=> new { x.UserName, x.Orders.Count });
+        
+
+            return Json(topFiveUsers, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

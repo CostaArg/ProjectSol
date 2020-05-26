@@ -6,6 +6,63 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+    <div class="row">
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Orders</div>
+                        <div class="widget-subheading">In total</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>4731</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-arielle-smile">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Clients</div>
+                        <div class="widget-subheading">In total</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>265</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-grow-early">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Profit</div>
+                        <div class="widget-subheading">In total</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>$ 819</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-premium-dark">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Products Sold</div>
+                        <div class="widget-subheading">Revenue streams</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-warning"><span>$14M</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 <h1 style="margin-bottom: 20px">Best-Selling Albums</h1>
 
 @{
@@ -47,7 +104,7 @@
             <div class="card-header-tab card-header-tab-animation card-header">
                 <div class="card-header-title">
                     <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                    Sales Report
+                    TOP 5 Best-Selling Albums
                 </div>
                 <ul class="nav">
                     <li class="nav-item"><a href="javascript:void(0);" class="active nav-link">Last</a></li>
@@ -191,7 +248,7 @@
             <div class="card-header-tab card-header">
                 <div class="card-header-title">
                     <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
-                    Bandwidth Reports
+                    Top 3 Most Valuable Customers
                 </div>
                 <div class="btn-actions-pane-right">
                     <div class="nav">
@@ -203,9 +260,7 @@
             <div class="tab-content">
                 <div class="tab-pane fade active show" id="tab-eg-55">
                     <div class="widget-chart p-3">
-                        <div style="height: 350px">
-                            <canvas id="line-chart"></canvas>
-                        </div>
+                            <canvas id="barChart" height="500" width="700"></canvas>
                         <div class="widget-chart-content text-center mt-5">
                             <div class="widget-description mt-0 text-warning">
                                 <i class="fa fa-arrow-left"></i>
