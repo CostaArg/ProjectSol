@@ -10,5 +10,6 @@ namespace ProjectMusic.Web.Models
     {
         public List<Album> Albums { get; set; }
         public List<ApplicationUser> Users { get; set; }
+        public List<Order> Orders { get; set; }
     }
 }

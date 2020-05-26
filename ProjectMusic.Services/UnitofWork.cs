@@ -22,6 +22,7 @@ namespace ProjectMusic.Services
             Genres = new GenreRepository(_context);
             Songs = new SongRepository(_context);
             Users = new UserRepository(_context);
+            Orders = new OrderRepository(_context);
         }
 
         public IAlbumRepository Albums { get; private set; }
@@ -29,6 +30,7 @@ namespace ProjectMusic.Services
         public IGenreRepository Genres { get; private set; }
         public ISongRepository Songs { get; private set; }
         public IUserRepository Users { get; private set; }
+        public IOrderRepository Orders { get; private set; }
 
         public int Complete()
         {

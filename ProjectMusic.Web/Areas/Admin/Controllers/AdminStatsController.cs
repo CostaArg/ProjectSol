@@ -21,10 +21,13 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 
             var users = UnitOfWork.Users.GetAll();
 
+            var orders = UnitOfWork.Orders.GetAll();
+
             StatsViewModel vm = new StatsViewModel();
 
             vm.Albums = albums.ToList();
             vm.Users = users.ToList();
+            vm.Orders = orders.ToList();
 
             return View(vm);
         }
@@ -39,14 +42,13 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         }
 
 
-        public ActionResult GetTopFiveUsers()
+        public ActionResult GetTopThreeUsers()
         {
             var users = UnitOfWork.Users.GetAll();
 
-            var topFiveUsers = users.OrderByDescending(x => x.Orders.Count).Select(x=> new { x.UserName, x.Orders.Count });
-        
+            var topThreeUsers = users.OrderByDescending(x => x.Orders.Count).Take(3).Select(x=> new { x.UserName, x.Orders.Count });
 
-            return Json(topFiveUsers, JsonRequestBehavior.AllowGet);
+            return Json(topThreeUsers, JsonRequestBehavior.AllowGet);
         }
 
     }

@@ -46,7 +46,7 @@
         type: "GET",
         contentType: "application/json",
         //data: "{entity:" + JSON.stringify(entity) + "}",
-        url: "/AdminStats/GetTopFiveUsers",
+        url: "/AdminStats/GetTopThreeUsers",
         success: function (data) {
 
             console.log(data);

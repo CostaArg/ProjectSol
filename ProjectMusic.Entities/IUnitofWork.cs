@@ -14,6 +14,7 @@ namespace ProjectMusic.Entities
         IGenreRepository Genres { get; }
         IArtistRepository Artists { get; }
         IUserRepository Users { get; }
+        IOrderRepository Orders { get; }
         int Complete();
     }
 }

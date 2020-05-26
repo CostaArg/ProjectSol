@@ -65,6 +65,7 @@
     <Compile Include="IRepositories\IAlbumRepository.cs" />
     <Compile Include="IRepositories\IArtistRepository.cs" />
     <Compile Include="IRepositories\IGenreRepository.cs" />
+    <Compile Include="IRepositories\IOrderRepository.cs" />
     <Compile Include="IRepositories\IRepository.cs" />
     <Compile Include="IRepositories\ISongRepository.cs" />
     <Compile Include="IRepositories\IUserRepository.cs" />
