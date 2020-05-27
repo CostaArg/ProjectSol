@@ -17,13 +17,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class AlbumController : Controller
     {
-        // private AlbumRepository albumRepository = new AlbumRepository();
-
         private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
 
-       
-
-        // GET: Admin/Album
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
             var albums = UnitOfWork.Albums.GetAll();
@@ -53,7 +48,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(albums.ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: Admin/Album/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -71,15 +65,11 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(album);
         }
 
-        // GET: Admin/Album/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Album/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases")] Album album)
@@ -95,7 +85,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(album);
         }
 
-        // GET: Admin/Album/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -113,9 +102,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(album);
         }
 
-        // POST: Admin/Album/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases")] Album album)
@@ -129,7 +115,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(album);
         }
 
-        // GET: Admin/Album/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -147,7 +132,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(album);
         }
 
-        // POST: Admin/Album/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

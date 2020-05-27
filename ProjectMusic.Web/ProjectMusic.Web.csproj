@@ -461,7 +461,6 @@
     <Content Include="Areas\Admin\Views\Song\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Song\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Song\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <Content Include="Areas\User\Views\UserHome\Index.cshtml" />
     <Content Include="Content\theme\.sass-cache\0a3dd42e7e252368368c10cef3407d815ca92c9b\_color.scssc" />
     <Content Include="Content\theme\.sass-cache\0a3dd42e7e252368368c10cef3407d815ca92c9b\_fonts.scssc" />

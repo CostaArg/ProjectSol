@@ -10,7 +10,6 @@ using System.Web.Mvc;
 
 namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
-
     public class AdminStatsController : Controller
     {
         private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
@@ -50,6 +49,5 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 
             return Json(topThreeUsers, JsonRequestBehavior.AllowGet);
         }
-
     }
 }

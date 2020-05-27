@@ -19,7 +19,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
     {
         private IUnitOfWork UnitOfWork = new UnitOfWork(new ApplicationDbContext());
 
-        // GET: Admin/Genre
         public ActionResult Index(string sortOrder, string searchName, int? pSize, int? page)
         {
             var genres = UnitOfWork.Genres.GetAll();
@@ -49,7 +48,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(genres.ToPagedList(pageNumber, pageSize));
         }
 
-        // GET: Admin/Genre/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -66,15 +64,11 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(genre);
         }
 
-        // GET: Admin/Genre/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Genre/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "GenreId,GenreName,GenrePhotoUrl")] Genre genre)
@@ -89,7 +83,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(genre);
         }
 
-        // GET: Admin/Genre/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -106,9 +99,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(genre);
         }
 
-        // POST: Admin/Genre/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "GenreId,GenreName,GenrePhotoUrl")] Genre genre)
@@ -122,7 +112,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(genre);
         }
 
-        // GET: Admin/Genre/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -139,12 +128,12 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             return View(genre);
         }
 
-        // POST: Admin/Genre/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Genre genre = UnitOfWork.Genres.Get(id);
+            UnitOfWork.Genres.Remove(genre);
             UnitOfWork.Complete();
             return RedirectToAction("Index");
         }

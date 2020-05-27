@@ -54,6 +54,10 @@ div.panel-body {
     background-color: lightgray;
 }
 
+.main-button{
+    width: 73%;
+}
+
 /*.message-right {
     display: flex;
     color: blue;

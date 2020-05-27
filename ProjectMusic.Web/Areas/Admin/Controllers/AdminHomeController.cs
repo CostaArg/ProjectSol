@@ -8,7 +8,6 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 {
     public class AdminHomeController : Controller
     {
-        // GET: Admin/AdminHome
         public ActionResult Index()
         {
             return View();
