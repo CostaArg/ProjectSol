@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_ChatLayout.cshtml";
 }
 
-<h2>Chat</h2>
+<h2 class="chat-title">Chat</h2>
 <div class="chat-panel panel panel-default">
-    <div class="panel-heading mb-2">
-        Powered by SingalR
+    <div class="chat-description">
+        Ask any question, our staff will reply as soon as possible!
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body" id="chat" style="height:250px;">
@@ -21,7 +21,7 @@
         <div class="input-group mt-2">
             <input id="message" type="text" name="message" class="form-control input-sm" placeholder="Type your message here..." />
 
-                <button id="sendmessage" value="Send" class="btn orange-button ml-2 mr-2 mt"><i class="fa fa-paper-plane fa-fw"></i> Send</button>
+            <button id="sendmessage" value="Send" class="btn orange-button ml-2 mr-2 mt"><i class="fa fa-paper-plane fa-fw"></i> Send</button>
 
         </div>
     </div>

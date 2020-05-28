@@ -1,10 +1,11 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    <form action="/Exit/ClearCookies" method="post">
-
-        <li><input type="submit" value="Logout" class="btn" /></li>
-    </form>
+    <li>
+        <form action="/Exit/ClearCookies" method="post">
+            <input type="submit" value="Logout">
+        </form>
+    </li>
 
     @*<form action="/Account/LogOff" class="navbar-right" id="logoutForm" method="post">
 

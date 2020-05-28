@@ -9,20 +9,30 @@
     <h4>Album Information</h4>
     <hr />
 
-    <div class="mb-2 card card-body w-50">
-        <h5 class="card-title">Album Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumId)</h6>
+    <div class="details-container">
+        <div class="mb-2 card card-body card-details">
+            <h5 class="card-title">Album Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumId)</h6>
 
-        <h5 class="card-title">Album Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumName)</h6>
+            <h5 class="card-title">Album Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumName)</h6>
 
-        <h5 class="card-title">Album Price</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPrice)</h6>
+            <h5 class="card-title">Album Price</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPrice)</h6>
 
-        <h5 class="card-title">Album Purchases</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPurchases)</h6>
+            <h5 class="card-title">Album Purchases</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPurchases)</h6>
 
-        <h5 class="card-title">Album Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPhotoUrl)</h6>
+            <h5 class="card-title">Album Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPhotoUrl)</h6>
 
-        <div>
-            <a href="/Admin/Album/Edit/@Model.AlbumId" class="btn btn-warning mt-4 main-button">Edit</a>
-            <a href="/Admin/Album" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            <div>
+                <a href="/Admin/Album/Edit/@Model.AlbumId" class="btn btn-warning mt-4 main-button">Edit</a>
+                <a href="/Admin/Album" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            </div>
         </div>
+
+        @{
+            if (Model.AlbumPhotoUrl != null)
+            {
+                <img src="@Model.AlbumPhotoUrl" alt="Album Photo" class="album-photo">
+            }
+        }
     </div>
+
 </div>

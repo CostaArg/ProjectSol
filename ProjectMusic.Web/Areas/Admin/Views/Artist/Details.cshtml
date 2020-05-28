@@ -5,20 +5,27 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div>
-    <h4>Artist Information</h4>
-    <hr />
+    <div>
+        <h4>Artist Information</h4>
+        <hr />
 
-    <div class="mb-2 card card-body w-50">
-        <h5 class="card-title">Artist Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistId)</h6>
+        <div class="mb-2 card card-body w-50">
+            <h5 class="card-title">Artist Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistId)</h6>
 
-        <h5 class="card-title">Artist Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistName)</h6>
+            <h5 class="card-title">Artist Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistName)</h6>
 
-        <h5 class="card-title">Artist Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistPhotoUrl)</h6>
+            <h5 class="card-title">Artist Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistPhotoUrl)</h6>
 
-        <div>
-            <a href="/Admin/Artist/Edit/@Model.ArtistId" class="btn btn-warning mt-4 main-button">Edit</a>
-            <a href="/Admin/Artist" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            <div>
+                <a href="/Admin/Artist/Edit/@Model.ArtistId" class="btn btn-warning mt-4 main-button">Edit</a>
+                <a href="/Admin/Artist" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            </div>
         </div>
+
+        @{
+            if (Model.ArtistPhotoUrl != null)
+            {
+                <img src="@Model.ArtistPhotoUrl" alt="Album Photo" class="">
+            }
+        }
     </div>
-</div>

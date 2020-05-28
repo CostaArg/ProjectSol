@@ -49,8 +49,6 @@
         url: "/AdminStats/GetTopThreeUsers",
         success: function (data) {
 
-            console.log(data);
-
             var userNames = [];
             var albumPurchases = [];
 

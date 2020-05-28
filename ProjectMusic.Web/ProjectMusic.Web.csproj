@@ -410,10 +410,6 @@
     <Content Include="Areas\User\Views\web.config" />
     <Content Include="Areas\User\Views\_ViewStart.cshtml" />
     <Content Include="Areas\User\Views\Shared\_UserLayout.cshtml" />
-    <Content Include="Areas\User\Views\Album\Index.cshtml" />
-    <Content Include="Areas\User\Views\Artist\Index.cshtml" />
-    <Content Include="Areas\User\Views\Genre\Index.cshtml" />
-    <Content Include="Areas\User\Views\Song\Index.cshtml" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -612,10 +608,6 @@
     <Content Include="Content\adminTheme\assets\fonts\Pe-icon-7-stroke.eot" />
     <Content Include="Content\adminTheme\assets\fonts\Pe-icon-7-stroke.ttf" />
     <Content Include="Content\adminTheme\assets\fonts\Pe-icon-7-stroke.woff" />
-    <Content Include="Areas\User\Views\Song\Details.cshtml" />
-    <Content Include="Areas\User\Views\Genre\Details.cshtml" />
-    <Content Include="Areas\User\Views\Artist\Details.cshtml" />
-    <Content Include="Areas\User\Views\Album\Details.cshtml" />
     <Content Include="Areas\User\Views\Shared\Components\_FooterUser.cshtml" />
     <Content Include="Areas\User\Views\Shared\Components\_NavigationBarUser.cshtml" />
     <Content Include="Areas\User\Views\UserOrder\Index.cshtml" />
@@ -624,7 +616,6 @@
     <Content Include="Areas\User\Views\UserThankYou\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Components\_NavigationBarAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\AdminStats\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\Components\_UIThemeAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Components\_SidePanelAdmin.cshtml" />
     <Content Include="Areas\Admin\Views\AppUserAdmin\Create.cshtml" />
     <Content Include="Areas\Admin\Views\AppUserAdmin\Delete.cshtml" />

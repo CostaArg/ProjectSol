@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Areas/User/Views/Shared/_UserLayout.cshtml";
 }
@@ -20,7 +19,7 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="breadcrumb-item"><a href="/User/UserHome"><i class="fa fa-home"></i> Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Contact</li>
                     </ol>
                 </nav>
@@ -48,34 +47,29 @@
                     <div class="contact-heading mb-50">
                         <h2>Contact Info</h2>
                         <h6>We will be happy to assist you with any question</h6>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing esed diam nonumy eirmod tempor invidunt ut labore et dolore magna. Integer vehicula mauris libero, at molestie eros imperdiet sit amet. Suspendisse mattis ante sit amet ante.</p>
+                        <p>Our store pays a lot of attention to what our customers are saying. We are open to listening to everyone's opinion about our services. It is of outmost importance for us to always pay attention to our clients' needs and we strive to reply to every question in a timely manner.</p>
                     </div>
 
 
-                    <h5>Address: 40 Baria Sreet 133/2 NewYork City, US</h5>
-                    <h5>Phone: +01-3-8888-6868</h5>
-                    <h5>Email: info@colorlib.com </h5>
-                    <h5>Open Hours: Mon - Fri: 8:00 AM to 6:00 PM</h5>
+                    <h5>Address: Omonoia 39, Athina 105 64</h5>
+                    <h5>Phone: +30 210 9910425</h5>
+                    <h5>Email: sol@albumstore.com </h5>
                 </div>
             </div>
 
             <!-- Contact Form -->
-            <div class="col-12 col-md-6">
-                <div class="contact-form">
-                    <div class="contact-heading">
-                        <h2>Get In Touch</h2>
-                        <h5>Don't hesitate to contact us</h5>
-                    </div>
+            <div class="col-12 col-md-6 contact-title">
 
-                    <div class="row">
-                        <div class="col-12">
-                            @if (@User.Identity.IsAuthenticated)
-                            {
-                                <button type="submit" class="btn poca-btn" onclick="openWindow()">Open Chat Window</button>
-                            }
-                        </div>
-                    </div>
+                <h2>Get In Touch</h2>
+                <h5>Don't hesitate to contact us</h5>
 
+                <div class="row">
+                    <div class="col-12">
+                        @if (@User.Identity.IsAuthenticated)
+                        {
+                            <button type="submit" class="btn chat-button" onclick="openWindow()">Open Chat Window</button>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
