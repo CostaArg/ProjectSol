@@ -5,62 +5,30 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Delete</h2>
-
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Album</h4>
+    <h4>Album Deletion</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumId)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumId)
-        </dd>
+    <div class="mb-2 card card-body w-50">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumName)
-        </dt>
+        <h5 class="card-title">Album Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumId)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumName)
-        </dd>
+        <h5 class="card-title">Album Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumName)</h6>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumPhotoUrl)
-        </dt>
+        <h5 class="card-title">Album Price</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPrice)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumPhotoUrl)
-        </dd>
+        <h5 class="card-title">Album Purchases</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPurchases)</h6>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumPrice)
-        </dt>
+        <h5 class="card-title">Album Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPhotoUrl)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumPrice)
-        </dd>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumPurchases)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AlbumPurchases)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-danger" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
+            <div>
+                <input type="submit" value="Delete" class="btn btn-danger mt-4 main-button" />
+                <a href="/Admin/AppUserAdmin" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            </div>
+        }
+    </div>
 </div>

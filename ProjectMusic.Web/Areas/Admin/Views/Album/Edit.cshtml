@@ -5,62 +5,47 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="form-horizontal">
-    <h4>Album</h4>
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    @Html.HiddenFor(model => model.AlbumId)
+    <div>
+        <h4>Edit Album</h4>
+        <hr />
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.AlbumName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.AlbumId)
+
+    <div class="mb-3 card card-body w-50">
+        <h5 class="card-title">Album Name</h5>
+        <h6 class="card-subtitle">
             @Html.EditorFor(model => model.AlbumName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.AlbumName, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.AlbumPhotoUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.AlbumPhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AlbumPhotoUrl, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.AlbumPrice, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        </h6>
+        <h5 class="card-title">Album Price</h5>
+        <h6 class="card-subtitle">
             @Html.EditorFor(model => model.AlbumPrice, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.AlbumPrice, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.AlbumPurchases, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
+        </h6>
+        <h5 class="card-title">Album Purchases</h5>
+        <h6 class="card-subtitle">
             @Html.EditorFor(model => model.AlbumPurchases, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.AlbumPurchases, "", new { @class = "text-danger" })
-        </div>
-    </div>
+        </h6>
+        <h5 class="card-title">Album Photo Url</h5>
+        <h6 class="card-subtitle">
+            @Html.EditorFor(model => model.AlbumPhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.AlbumPhotoUrl, "", new { @class = "text-danger" })
+        </h6>
 
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-primary" />
+        <div>
+            <input type="submit" value="Save" class="btn btn-success mt-4 main-button" />
+            <a href="/Admin/Album" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
         </div>
+
     </div>
-</div>
+    </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

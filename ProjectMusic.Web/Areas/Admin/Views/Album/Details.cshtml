@@ -5,56 +5,24 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Album</h4>
+    <h4>Album Information</h4>
     <hr />
-    <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumId)
-        </dt>
+    <div class="mb-2 card card-body w-50">
+        <h5 class="card-title">Album Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumId)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumId)
-        </dd>
+        <h5 class="card-title">Album Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumName)</h6>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumName)
-        </dt>
+        <h5 class="card-title">Album Price</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPrice)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumName)
-        </dd>
+        <h5 class="card-title">Album Purchases</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPurchases)</h6>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumPhotoUrl)
-        </dt>
+        <h5 class="card-title">Album Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.AlbumPhotoUrl)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.AlbumPhotoUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumPrice)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AlbumPrice)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AlbumPurchases)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AlbumPurchases)
-        </dd>
-
-    </dl>
+        <div>
+            <a href="/Admin/Album/Edit/@Model.AlbumId" class="btn btn-warning mt-4 main-button">Edit</a>
+            <a href="/Admin/Album" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

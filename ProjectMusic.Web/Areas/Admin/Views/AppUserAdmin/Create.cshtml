@@ -5,80 +5,83 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div>
-        <h4>Edit User</h4>
+        <h4>Add User</h4>
         <hr />
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
 
-    <div class="mb-3 card card-body w-50">
-        <h5 class="card-title">Email</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">User Name</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Password Hash</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.PasswordHash, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Email Confirmation</h5>
-        <h6 class="card-subtitle checkbox ml-1">
-            @Html.EditorFor(model => model.EmailConfirmed)
-            @Html.ValidationMessageFor(model => model.EmailConfirmed, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Security Stamp</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.SecurityStamp, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.SecurityStamp, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Phone Number</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Phone Number Confirmation</h5>
-        <h6 class="card-subtitle checkbox ml-1">
-            @Html.EditorFor(model => model.PhoneNumberConfirmed)
-            @Html.ValidationMessageFor(model => model.PhoneNumberConfirmed, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Two-Factor Authentication Enable</h5>
-        <h6 class="card-subtitle checkbox ml-1">
-            @Html.EditorFor(model => model.TwoFactorEnabled)
-            @Html.ValidationMessageFor(model => model.TwoFactorEnabled, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Lockout End Date Utc</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.LockoutEndDateUtc, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.LockoutEndDateUtc, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Lockout Enable</h5>
-        <h6 class="card-subtitle checkbox ml-1">
-            @Html.EditorFor(model => model.LockoutEnabled)
-            @Html.ValidationMessageFor(model => model.LockoutEnabled, "", new { @class = "text-danger" })
-        </h6>
-        <h5 class="card-title">Failed Access Amount</h5>
-        <h6 class="card-subtitle">
-            @Html.EditorFor(model => model.AccessFailedCount, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.AccessFailedCount, "", new { @class = "text-danger" })
-        </h6>
+        <div class="mb-3 card card-body w-50">
+            <h5 class="card-title">Email</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">User Name</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Password Hash</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.PasswordHash, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PasswordHash, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Email Confirmation</h5>
+            <h6 class="card-subtitle checkbox ml-1">
+                @Html.EditorFor(model => model.EmailConfirmed)
+                @Html.ValidationMessageFor(model => model.EmailConfirmed, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Security Stamp</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.SecurityStamp, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SecurityStamp, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Phone Number</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Phone Number Confirmation</h5>
+            <h6 class="card-subtitle checkbox ml-1">
+                @Html.EditorFor(model => model.PhoneNumberConfirmed)
+                @Html.ValidationMessageFor(model => model.PhoneNumberConfirmed, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Two-Factor Authentication Enable</h5>
+            <h6 class="card-subtitle checkbox ml-1">
+                @Html.EditorFor(model => model.TwoFactorEnabled)
+                @Html.ValidationMessageFor(model => model.TwoFactorEnabled, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Lockout End Date Utc</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.LockoutEndDateUtc, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LockoutEndDateUtc, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Lockout Enable</h5>
+            <h6 class="card-subtitle checkbox ml-1">
+                @Html.EditorFor(model => model.LockoutEnabled)
+                @Html.ValidationMessageFor(model => model.LockoutEnabled, "", new { @class = "text-danger" })
+            </h6>
+            <h5 class="card-title">Failed Access Amount</h5>
+            <h6 class="card-subtitle">
+                @Html.EditorFor(model => model.AccessFailedCount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AccessFailedCount, "", new { @class = "text-danger" })
+            </h6>
 
-        <div>
-            <input type="submit" value="Create" class="btn btn-success mt-4 main-button" />
-            <a href="/Admin/AppUserAdmin" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            <div>
+                <input type="submit" value="Create" class="btn btn-success mt-4 main-button" />
+                <a href="/Admin/AppUserAdmin" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+            </div>
+
         </div>
+    </div>
+}
 
-    </div>
-    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

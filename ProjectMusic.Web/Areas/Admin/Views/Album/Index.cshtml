@@ -18,8 +18,62 @@
     List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
 }
 
+<div class="main-card mb-3 card">
+    <div class="card-header">
+        Manage Albums
+    </div>
+    <div class="table-responsive">
+        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Album Id</th>
+                    <th>Album Name and Price</th>
+                    <th class="text-center">Has Picture</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.AlbumId)</td>
+                        <td>
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left flex2">
+                                        <div class="widget-heading">@Html.DisplayFor(modelItem => item.AlbumName)</div>
+                                        <div class="widget-subheading opacity-7">@Html.DisplayFor(modelItem => item.AlbumPrice)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            @{
+                                if (item.AlbumPhotoUrl != null)
+                                {
+                                    <div class="badge badge-success">True</div>
 
-<h2>All Albums</h2>
+                                }
+                                else
+                                {
+                                    <div class="badge badge-danger">False</div>
+                                }
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a href="/Admin/Album/Details/@item.AlbumId" class="btn-icon btn-icon-only btn btn-primary"><i class="pe-7s-info btn-icon-wrapper"></i> Details</a>
+                            <a href="/Admin/Album/Edit/@item.AlbumId" class="btn-icon btn-icon-only btn btn-warning"><i class="pe-7s-edit btn-icon-wrapper"></i> Edit</a>
+                            <a href="/Admin/Album/Delete/@item.AlbumId" class="btn-icon btn-icon-only btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="d-block text-center card-footer">
+        <a class="btn-icon btn-icon-only btn btn-primary" href="/Admin/Album/Create"><i class="pe-7s-plus btn-icon-wrapper mr-2"></i>Create New</a>
+    </div>
+</div>
 
 <div class="container-fluid box">
     <div>
@@ -38,46 +92,3 @@
         }
     </div>
 </div>
-
-<a class="btn btn-primary" href="/Admin/Album/Create">Create New</a>
-
-<table class="table mt-2">
-    <tr>
-        <th>
-            Photo
-        </th>
-        <th>
-            <div class="float-left">
-                Album Name
-            </div>
-            <div class="float-left ml-2">
-                @Html.ActionLink("Sort A-Z", "Index", "Album", new { sortOrder = ViewBag.NameSort }, new { @class = "badge badge-primary" })
-            </div>
-        </th>
-        <th>Album Id</th>
-        <th>Album Price</th>
-        <th>Album Purchases</th>
-        <th></th>
-    </tr>
-
-    @foreach (var album in Model)
-    {
-        <tr>
-            <td>
-                <a href="/album/details/@album.AlbumId"><img width="100" class="img-fluid" src="@album.AlbumPhotoUrl" alt="Image Missing" /></a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => album.AlbumName)
-            </td>
-            <td>@Html.DisplayFor(modelItem => album.AlbumId)</td>
-            <td>@Html.DisplayFor(modelItem => album.AlbumPrice)</td>
-            <td>@Html.DisplayFor(modelItem => album.AlbumPurchases)</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = album.AlbumId }, new { @class = "badge badge-info"}) |
-                @Html.ActionLink("Details", "Details", new { id = album.AlbumId }, new { @class = "badge badge-success"}) |
-                @Html.ActionLink("Delete", "Delete", new { id = album.AlbumId }, new { @class = "badge badge-danger"})
-            </td>
-        </tr>
-    }
-
-</table>

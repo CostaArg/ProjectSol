@@ -5,153 +5,59 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-
-
-    <div class="main-card mb-3 card">
-        <div class="card-header">
-            Manage Users
-        </div>
-        <div class="table-responsive">
-            <table class="align-middle mb-0 table table-borderless table-striped table-hover">
-                <thead>
+<div class="main-card mb-3 card">
+    <div class="card-header">
+        Manage Users
+    </div>
+    <div class="table-responsive">
+        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">User Id</th>
+                    <th>Email and Username</th>
+                    <th class="text-center">Email Confirmation</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
                     <tr>
-                        <th class="text-center">User Id</th>
-                        <th>Email and Username</th>
-                        <th class="text-center">Email Confirmation</th>
-                        <th class="text-center">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.Id)</td>
-                            <td>
-                                <div class="widget-content p-0">
-                                    <div class="widget-content-wrapper">
-                                        <div class="widget-content-left mr-3">
-                                            <div class="widget-content-left">
-                                                <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="widget-content-left flex2">
-                                            <div class="widget-heading">@Html.DisplayFor(modelItem => item.Email)</div>
-                                            <div class="widget-subheading opacity-7">@Html.DisplayFor(modelItem => item.UserName)</div>
-                                        </div>
+                        <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left flex2">
+                                        <div class="widget-heading">@Html.DisplayFor(modelItem => item.Email)</div>
+                                        <div class="widget-subheading opacity-7">@Html.DisplayFor(modelItem => item.UserName)</div>
                                     </div>
                                 </div>
-                            </td>
-                            <td class="text-center">
-                                @{
-                                    if (item.EmailConfirmed)
-                                    {
-                                        <div class="badge badge-success">True</div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            @{
+                                if (item.EmailConfirmed)
+                                {
+                                    <div class="badge badge-success">True</div>
 
-                                    }
-                                    else
-                                    {
-                                        <div class="badge badge-danger">False</div>
-                                    }
                                 }
-                            </td>
-                            <td class="text-center">
-                                <a href="/Admin/AppUserAdmin/Details/@item.Id" class="btn-icon btn-icon-only btn btn-primary"><i class="pe-7s-info btn-icon-wrapper"></i> Details</a>
-                                <a href="/Admin/AppUserAdmin/Edit/@item.Id" class="btn-icon btn-icon-only btn btn-warning"><i class="pe-7s-edit btn-icon-wrapper"></i> Edit</a>
-                                <a href="/Admin/AppUserAdmin/Delete/@item.Id" class="btn-icon btn-icon-only btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"></i> Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <div class="d-block text-center card-footer">
-            <a class="btn-icon btn-icon-only btn btn-primary" href="/Admin/AppUserAdmin/Create"><i class="pe-7s-plus btn-icon-wrapper mr-2"></i>Create New</a>
-        </div>
+                                else
+                                {
+                                    <div class="badge badge-danger">False</div>
+                                }
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a href="/Admin/AppUserAdmin/Details/@item.Id" class="btn-icon btn-icon-only btn btn-primary"><i class="pe-7s-info btn-icon-wrapper"></i> Details</a>
+                            <a href="/Admin/AppUserAdmin/Edit/@item.Id" class="btn-icon btn-icon-only btn btn-warning"><i class="pe-7s-edit btn-icon-wrapper"></i> Edit</a>
+                            <a href="/Admin/AppUserAdmin/Delete/@item.Id" class="btn-icon btn-icon-only btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
     </div>
-
-
-@*<a class="btn btn-primary" href="/Admin/AppUserAdmin/Create">Create New</a>
-
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.EmailConfirmed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PasswordHash)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SecurityStamp)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumberConfirmed)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TwoFactorEnabled)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LockoutEndDateUtc)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LockoutEnabled)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AccessFailedCount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserName)
-            </th>
-            <th></th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EmailConfirmed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PasswordHash)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SecurityStamp)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNumber)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PhoneNumberConfirmed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TwoFactorEnabled)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LockoutEndDateUtc)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LockoutEnabled)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AccessFailedCount)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.UserName)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
-            </tr>
-        }
-
-    </table>*@
+    <div class="d-block text-center card-footer">
+        <a class="btn-icon btn-icon-only btn btn-primary" href="/Admin/AppUserAdmin/Create"><i class="pe-7s-plus btn-icon-wrapper mr-2"></i>Create New</a>
+    </div>
+</div>
