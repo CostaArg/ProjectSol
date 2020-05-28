@@ -5,32 +5,18 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Song</h4>
+    <h4>Song Information</h4>
     <hr />
-    <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SongId)
-        </dt>
+    <div class="mb-2 card card-body w-50">
+        <h5 class="card-title">Song Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.SongId)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.SongId)
-        </dd>
+        <h5 class="card-title">Song Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.SongName)</h6>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SongName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SongName)
-        </dd>
-
-    </dl>
+        <div>
+            <a href="/Admin/Song/Edit/@Model.SongId" class="btn btn-warning mt-4 main-button">Edit</a>
+            <a href="/Admin/Song" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SongId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -5,46 +5,37 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Genre</h4>
+    <div>
+        <h4>Edit Genre</h4>
         <hr />
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.GenreId)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.GenreName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+        <div class="mb-3 card card-body w-50">
+            <h5 class="card-title">Genre Name</h5>
+            <h6 class="card-subtitle">
                 @Html.EditorFor(model => model.GenreName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GenreName, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GenrePhotoUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            </h6>
+            <h5 class="card-title">Genre Photo Url</h5>
+            <h6 class="card-subtitle">
                 @Html.EditorFor(model => model.GenrePhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.GenrePhotoUrl, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            </h6>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div>
+                <input type="submit" value="Save" class="btn btn-success mt-4 main-button" />
+                <a href="/Admin/Album" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
             </div>
+
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

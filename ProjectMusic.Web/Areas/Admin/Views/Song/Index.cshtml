@@ -18,149 +18,47 @@
     List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
 }
 
-
-
-
-
 <div class="main-card mb-3 card">
     <div class="card-header">
-        Manage Users
-        <div class="btn-actions-pane-right">
-            <div role="group" class="btn-group-sm btn-group">
-                <button class="active btn btn-focus">Last Week</button>
-                <button class="btn btn-focus">All Month</button>
-            </div>
-        </div>
+        Manage Songs
     </div>
     <div class="table-responsive">
         <table class="align-middle mb-0 table table-borderless table-striped table-hover">
             <thead>
                 <tr>
-                    <th class="text-center">#</th>
-                    <th>Name</th>
-                    <th class="text-center">City</th>
-                    <th class="text-center">Status</th>
+                    <th class="text-center">Song Id</th>
+                    <th>Song Name</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td class="text-center text-muted">#345</td>
-                    <td>
-                        <div class="widget-content p-0">
-                            <div class="widget-content-wrapper">
-                                <div class="widget-content-left mr-3">
-                                    <div class="widget-content-left">
-                                        <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.SongId)</td>
+                        <td>
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left flex2">
+                                        <div class="widget-heading">@Html.DisplayFor(modelItem => item.SongName)</div>
                                     </div>
                                 </div>
-                                <div class="widget-content-left flex2">
-                                    <div class="widget-heading">John Doe</div>
-                                    <div class="widget-subheading opacity-7">Web Developer</div>
-                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="text-center">Madrid</td>
-                    <td class="text-center">
-                        <div class="badge badge-warning">Pending</div>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center text-muted">#347</td>
-                    <td>
-                        <div class="widget-content p-0">
-                            <div class="widget-content-wrapper">
-                                <div class="widget-content-left mr-3">
-                                    <div class="widget-content-left">
-                                        <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="widget-content-left flex2">
-                                    <div class="widget-heading">Ruben Tillman</div>
-                                    <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="text-center">Berlin</td>
-                    <td class="text-center">
-                        <div class="badge badge-success">Completed</div>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center text-muted">#321</td>
-                    <td>
-                        <div class="widget-content p-0">
-                            <div class="widget-content-wrapper">
-                                <div class="widget-content-left mr-3">
-                                    <div class="widget-content-left">
-                                        <img width="40" class="rounded-circle" src="assets/images/avatars/2.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="widget-content-left flex2">
-                                    <div class="widget-heading">Elliot Huber</div>
-                                    <div class="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="text-center">London</td>
-                    <td class="text-center">
-                        <div class="badge badge-danger">In Progress</div>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" id="PopoverCustomT-3" class="btn btn-primary btn-sm">Details</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="text-center text-muted">#55</td>
-                    <td>
-                        <div class="widget-content p-0">
-                            <div class="widget-content-wrapper">
-                                <div class="widget-content-left mr-3">
-                                    <div class="widget-content-left">
-                                        <img width="40" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
-                                    </div>
-                                </div>
-                                <div class="widget-content-left flex2">
-                                    <div class="widget-heading">Vinnie Wagstaff</div>
-                                    <div class="widget-subheading opacity-7">UI Designer</div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="text-center">Amsterdam</td>
-                    <td class="text-center">
-                        <div class="badge badge-info">On Hold</div>
-                    </td>
-                    <td class="text-center">
-                        <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
-                    </td>
-                </tr>
+                        </td>
+                        <td class="text-center">
+                            <a href="/Admin/Song/Details/@item.SongId" class="btn-icon btn-icon-only btn btn-primary"><i class="pe-7s-info btn-icon-wrapper"></i> Details</a>
+                            <a href="/Admin/Song/Edit/@item.SongId" class="btn-icon btn-icon-only btn btn-warning"><i class="pe-7s-edit btn-icon-wrapper"></i> Edit</a>
+                            <a href="/Admin/Song/Delete/@item.SongId" class="btn-icon btn-icon-only btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
     <div class="d-block text-center card-footer">
-        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-        <button class="btn-wide btn btn-success">Save</button>
+        <a class="btn-icon btn-icon-only btn btn-primary" href="/Admin/Song/Create"><i class="pe-7s-plus btn-icon-wrapper mr-2"></i>Create New</a>
     </div>
 </div>
-
-
-
-
-
-
-
-
-<h2>All Songs</h2>
 
 <div class="container-fluid box">
     <div>
@@ -179,34 +77,3 @@
         }
     </div>
 </div>
-
-<a class="btn btn-primary" href="/Admin/Song/Create">Create New</a>
-
-<table class="table mt-2">
-    <tr>
-        <th>
-            <div class="float-left">
-                Song Name
-            </div>
-            <div class="float-left ml-2">
-                @Html.ActionLink("Sort", "Index", "Song", new { sortOrder = ViewBag.NameSort }, new { @class = "btn btn-primary" })
-            </div>
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var song in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => song.SongName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = song.SongId }) |
-                @Html.ActionLink("Details", "Details", new { id = song.SongId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = song.SongId })
-            </td>
-        </tr>
-    }
-
-</table>

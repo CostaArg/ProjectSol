@@ -18,7 +18,61 @@
     List<SelectListItem> items = new List<SelectListItem>() { a1, a2, a3, a4, a5 };
 }
 
-<h2>All Genres</h2>
+<div class="main-card mb-3 card">
+    <div class="card-header">
+        Manage Genres
+    </div>
+    <div class="table-responsive">
+        <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+            <thead>
+                <tr>
+                    <th class="text-center">Genre Id</th>
+                    <th>Genre Name</th>
+                    <th class="text-center">Has Picture</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.GenreId)</td>
+                        <td>
+                            <div class="widget-content p-0">
+                                <div class="widget-content-wrapper">
+                                    <div class="widget-content-left flex2">
+                                        <div class="widget-heading">@Html.DisplayFor(modelItem => item.GenreName)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="text-center">
+                            @{
+                                if (item.GenrePhotoUrl != null)
+                                {
+                                    <div class="badge badge-success">True</div>
+
+                                }
+                                else
+                                {
+                                    <div class="badge badge-danger">False</div>
+                                }
+                            }
+                        </td>
+                        <td class="text-center">
+                            <a href="/Admin/Genre/Details/@item.GenreId" class="btn-icon btn-icon-only btn btn-primary"><i class="pe-7s-info btn-icon-wrapper"></i> Details</a>
+                            <a href="/Admin/Genre/Edit/@item.GenreId" class="btn-icon btn-icon-only btn btn-warning"><i class="pe-7s-edit btn-icon-wrapper"></i> Edit</a>
+                            <a href="/Admin/Genre/Delete/@item.GenreId" class="btn-icon btn-icon-only btn btn-danger"><i class="pe-7s-trash btn-icon-wrapper"></i> Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="d-block text-center card-footer">
+        <a class="btn-icon btn-icon-only btn btn-primary" href="/Admin/Genre/Create"><i class="pe-7s-plus btn-icon-wrapper mr-2"></i>Create New</a>
+    </div>
+</div>
 
 <div class="container-fluid box">
     <div>
@@ -37,40 +91,3 @@
         }
     </div>
 </div>
-
-<a class="btn btn-primary" href="/Admin/Genre/Create">Create New</a>
-
-<table class="table mt-2">
-    <tr>
-        <th>
-            Photo
-        </th>
-        <th>
-            <div class="float-left">
-                Genre
-            </div>
-            <div class="float-left ml-2">
-                @Html.ActionLink("Sort", "Index", "Genre", new { sortOrder = ViewBag.NameSort }, new { @class = "btn btn-primary" })
-            </div>
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var genre in Model)
-    {
-        <tr>
-            <td>
-                <a href="/genre/details/@genre.GenreId"><img width="100" class="img-fluid" src="@genre.GenrePhotoUrl" alt="Image Missing" /></a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => genre.GenreName)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = genre.GenreId }) |
-                @Html.ActionLink("Details", "Details", new { id = genre.GenreId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = genre.GenreId })
-            </td>
-        </tr>
-    }
-
-</table>

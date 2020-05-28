@@ -5,40 +5,20 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Artist</h4>
+    <h4>Artist Information</h4>
     <hr />
-    <dl class="dl-horizontal">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ArtistId)
-        </dt>
+    <div class="mb-2 card card-body w-50">
+        <h5 class="card-title">Artist Id</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistId)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.ArtistId)
-        </dd>
+        <h5 class="card-title">Artist Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistName)</h6>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ArtistName)
-        </dt>
+        <h5 class="card-title">Artist Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistPhotoUrl)</h6>
 
-        <dd>
-            @Html.DisplayFor(model => model.ArtistName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ArtistPhotoUrl)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ArtistPhotoUrl)
-        </dd>
-
-    </dl>
+        <div>
+            <a href="/Admin/Artist/Edit/@Model.ArtistId" class="btn btn-warning mt-4 main-button">Edit</a>
+            <a href="/Admin/Artist" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ArtistId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
