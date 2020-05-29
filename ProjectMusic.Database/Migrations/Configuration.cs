@@ -28,7 +28,7 @@
             Artist ar5 = new Artist() { ArtistName = "John Denver" };
 
             Album al1 = new Album() { AlbumName = "The Slim Shady LP", AlbumPrice = 19.99M, AlbumPurchases = 15};
-            Album al2 = new Album() { AlbumName = "Strauss, J.: An der schonen blauen Donau (The Blue Danube)", AlbumPrice = 24.99M, AlbumPurchases = 34};
+            Album al2 = new Album() { AlbumName = "Strauss, J. An der schonen blauen Donau (The Blue Danube)", AlbumPrice = 24.99M, AlbumPurchases = 34};
             Album al3 = new Album() { AlbumName = "Fear Inoculum", AlbumPrice = 14.99M, AlbumPurchases = 7};
             Album al4 = new Album() { AlbumName = "Combat Rock", AlbumPrice = 27.99M, AlbumPurchases = 36};
             Album al5 = new Album() { AlbumName = "Poems, Prayers and Promises", AlbumPrice = 11.99M, AlbumPurchases = 21 };

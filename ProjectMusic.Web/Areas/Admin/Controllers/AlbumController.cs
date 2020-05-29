@@ -152,15 +152,12 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public JsonResult SpotifyPhoto(string photoUrl)
+        public void SpotifyPhoto(string photoUrl, int id)
         {
-            Album album = UnitOfWork.Albums.Get(4);
+            Album album = UnitOfWork.Albums.Get(id);
             album.AlbumPhotoUrl = photoUrl;
             UnitOfWork.Albums.UpdateSpotify(album);
             UnitOfWork.Complete();
-
-
-            return null;
         }
     }
 }

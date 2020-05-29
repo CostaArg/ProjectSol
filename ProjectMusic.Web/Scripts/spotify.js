@@ -19,6 +19,7 @@
                 var spotifyId = $("#SpotifyAlbumId").val();
                 var apiFullString = apiPartialString + spotifyId;
                 var albumPhoto;
+                var albumId = $("#AlbumId").val();
 
                 $.ajax({
                     type: "GET",
@@ -28,7 +29,7 @@
                         "Authorization": "Bearer " + accessToken
                     },
                     success: function (data) {
-                        albumPhoto = { PhotoUrl: data.images[0].url };
+                        albumPhoto = { PhotoUrl: data.images[0].url, Id: albumId };
 
                         $.ajax({
                             type: "POST",
@@ -36,6 +37,7 @@
                             data: JSON.stringify(albumPhoto),
                             url: "/Admin/Album/SpotifyPhoto",
                             success: function () {
+                                alert("Photo inserted to the Database!");
                             },
                             error: function (result) {
                                 alert("Something went wrong with sending the data");

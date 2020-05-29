@@ -14,7 +14,7 @@
         <hr />
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.AlbumId)
+        @Html.HiddenFor(model => model.AlbumId, new { htmlAttributes = new { @id = "AlbumId" } })
 
     <div class="mb-3 card card-body w-50">
         <h5 class="card-title">Album Name</h5>
