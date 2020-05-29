@@ -16,6 +16,7 @@ namespace ProjectMusic.Entities.Domain
         public string AlbumPhotoUrl { get; set; }
         public decimal AlbumPrice { get; set; }
         public int AlbumPurchases { get; set; }
+        public string SpotifyAlbumId { get; set; }
 
 
         //multiple albums can belong to one artist

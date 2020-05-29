@@ -72,7 +72,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases")] Album album)
+        public ActionResult Create([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases,SpotifyAlbumId")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -104,7 +104,7 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases")] Album album)
+        public ActionResult Edit([Bind(Include = "AlbumId,AlbumName,AlbumPhotoUrl,AlbumPrice,AlbumPurchases,SpotifyAlbumId")] Album album)
         {
             if (ModelState.IsValid)
             {
@@ -152,9 +152,8 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public JsonResult Spotify(string photoUrl)
+        public JsonResult SpotifyPhoto(string photoUrl)
         {
-            string kati = photoUrl;
             Album album = UnitOfWork.Albums.Get(4);
             album.AlbumPhotoUrl = photoUrl;
             UnitOfWork.Albums.UpdateSpotify(album);

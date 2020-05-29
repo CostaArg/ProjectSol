@@ -1,21 +1,49 @@
 ﻿$(function () {
+    var accessToken;
+
     $("#spotify").click(function () {
+
         $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            url: "https://api.spotify.com/v1/albums/0sNOF9WDwhWunNAHPD3Baj",
-            success: function (data) {
-                var albumPhoto = { PhotoUrl: data.images[0].url };
+            type: "POST",
+            data: {
+                grant_type: "client_credentials"
+            },
+            url: "https://accounts.spotify.com/api/token",
+            headers: {
+                "Authorization": "Basic " + "ZjcwNTMyODYyN2YwNDNjODlkNDYzZjY4Y2E1NTUwZDg6ZDY3MGZlMjkzMzAwNDExY2EzNDkxMDA1YWU4YjhlMTE="
+            },
+            success: function (result) {
+                accessToken = result.access_token;
+
+                var apiPartialString = "https://api.spotify.com/v1/albums/";
+                var spotifyId = $("#SpotifyAlbumId").val();
+                var apiFullString = apiPartialString + spotifyId;
+                var albumPhoto;
+
                 $.ajax({
-                    type: "POST",
+                    type: "GET",
                     contentType: "application/json",
-                    data: JSON.stringify(albumPhoto),
-                    url: "/Admin/Album/Spotify",
-                    success: function () {
-                        alert("SUCCESS");
+                    url: apiFullString,
+                    headers: {
+                        "Authorization": "Bearer " + accessToken
+                    },
+                    success: function (data) {
+                        albumPhoto = { PhotoUrl: data.images[0].url };
+
+                        $.ajax({
+                            type: "POST",
+                            contentType: "application/json",
+                            data: JSON.stringify(albumPhoto),
+                            url: "/Admin/Album/SpotifyPhoto",
+                            success: function () {
+                            },
+                            error: function (result) {
+                                alert("Something went wrong with sending the data");
+                            }
+                        });
                     },
                     error: function (result) {
-                        alert("Something went wrong with sending the data");
+                        alert("Something went wrong with the API");
                     }
                 });
             },
