@@ -27,5 +27,11 @@ namespace ProjectMusic.Services.Repositories
         {
             return ApplicationDbContext.Albums.Include(x => x.Songs).ToList();
         }
+
+        public void UpdateSpotify(Album album)
+        {
+            Context.Entry(album).State = EntityState.Modified;
+        }
+
     }
 }

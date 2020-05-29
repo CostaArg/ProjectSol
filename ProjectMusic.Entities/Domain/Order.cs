@@ -13,11 +13,11 @@ namespace ProjectMusic.Entities.Domain
         [Key, Column(Order = 1)]
         public int OrderId { get; set; }
 
-        public ApplicationUser User { get; set; } 
+        public virtual ApplicationUser User { get; set; } 
 
-        public Album Album { get; set; }
+        public virtual Album Album { get; set; }
 
-        public DateTime DatePurchased { get; set; }
+        public virtual DateTime DatePurchased { get; set; }
 
         //[Key, Column(Order = 2)]
         //public string UserId { get; set; }

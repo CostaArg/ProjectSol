@@ -150,5 +150,18 @@ namespace ProjectMusic.Web.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public JsonResult Spotify(string photoUrl)
+        {
+            string kati = photoUrl;
+            Album album = UnitOfWork.Albums.Get(4);
+            album.AlbumPhotoUrl = photoUrl;
+            UnitOfWork.Albums.UpdateSpotify(album);
+            UnitOfWork.Complete();
+
+
+            return null;
+        }
     }
 }

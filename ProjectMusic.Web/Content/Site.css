@@ -98,5 +98,21 @@ div.panel-body {
 }
 
 .logout-button {
-    
+    border: none;
+    background: none;
+    padding: 0;
+    color: white;
+    z-index: 1;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: capitalize;
+    transition-duration: 500ms;
+    text-decoration: none;
+    outline: none;
+    font-family: "HK Grotesk";
+    margin-left: 10px;
 }
+    .logout-button:hover {
+        color: #f55656;
+        cursor: pointer;
+    }

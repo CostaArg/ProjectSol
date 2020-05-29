@@ -20,5 +20,10 @@ namespace ProjectMusic.Services.Repositories
         {
             get { return Context as ApplicationDbContext; }
         }
+
+        //public IEnumerable<Order> GetOrdersWithAlbumsAndUsers()
+        //{
+        //    return ApplicationDbContext.Orders.Include(x => x.al
+        //}
     }
 }

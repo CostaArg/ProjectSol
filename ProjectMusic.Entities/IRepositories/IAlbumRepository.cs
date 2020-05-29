@@ -11,5 +11,6 @@ namespace ProjectMusic.Entities.IRepositories
     public interface IAlbumRepository : IRepository<Album>
     {
         IEnumerable<Album> GetAlbumsWithSongs();
+        void UpdateSpotify(Album album);
     }
 }
