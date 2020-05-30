@@ -80,25 +80,22 @@
             al4.Songs = new List<Song>() { s4 };
             al5.Songs = new List<Song>() { s5 };
 
-            //Roles
-            string adminRole = "Admin";
+            //Accounts
             string adminEmail = "admin@yahoo.com";
             string adminPass = "admin123";
 
-            string user1Role = "Dimitris";
             string user1Email = "dimitris@gmail.com";
             string user1Pass = "dokimi123";
 
-            string user2Role = "Giorgos";
             string user2Email = "giorgos@hotmail.com";
             string user2Pass = "test123";
 
-            if (!context.Users.Any(user => user.UserName == "Admin"))
+            if (!context.Users.Any(user => user.UserName == adminEmail))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
 
-                var adminAccount = new ApplicationUser { UserName = adminRole, Email = adminEmail };
+                var adminAccount = new ApplicationUser { UserName = adminEmail, Email = adminEmail };
 
                 manager.Create(adminAccount, adminPass);
 
@@ -107,12 +104,12 @@
                 context.Orders.AddOrUpdate(x => x.OrderId, firstOrder);
             }
 
-            if (!context.Users.Any(user => user.UserName == "Dimitris"))
+            if (!context.Users.Any(user => user.UserName == user1Email))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
 
-                var user1Account = new ApplicationUser { UserName = user1Role, Email = user1Email };
+                var user1Account = new ApplicationUser { UserName = user1Email, Email = user1Email };
 
                 manager.Create(user1Account, user1Pass);
 
@@ -123,12 +120,12 @@
                 context.Orders.AddOrUpdate(x => x.OrderId, firstOrder, secondOrder, thirdOrder);
             }
 
-            if (!context.Users.Any(user => user.UserName == "Giorgos"))
+            if (!context.Users.Any(user => user.UserName == user2Email))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
 
-                var user2Account = new ApplicationUser { UserName = user2Role, Email = user2Email };
+                var user2Account = new ApplicationUser { UserName = user2Email, Email = user2Email };
 
                 manager.Create(user2Account, user2Pass);
 

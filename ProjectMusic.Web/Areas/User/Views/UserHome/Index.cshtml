@@ -43,15 +43,26 @@
                             <div class="poca-music-content">
                                 <span class="music-published-date"></span>
                                 <h2>@latestAlbumName</h2>
+
                                 <div class="music-meta-data ml-2">
                                     <p>By @latestArtistName |  @latestGenre</p>
                                 </div>
+
+                                <span class="music-published-date mb-2">Listen to the Sample</span>
+
+                                @{
+                                    var featuredSong = Model.Albums.First().Songs.First().SongName.Replace(" ", "");
+                                    var featuredSongPath = "../Content/theme/audio/" + featuredSong + ".mp3";
+                                }
+
                                 <!-- Music Player -->
                                 <div class="poca-music-player">
                                     <audio preload="auto" controls>
-                                        <source src="~/Content/theme/audio/dummy-audio.mp3">
+                                        <source src="@featuredSongPath">
                                     </audio>
                                 </div>
+
+
                                 <!-- Likes, Share & Download -->
                                 <div class="likes-share-download d-flex align-items-center justify-content-between">
 
@@ -118,19 +129,19 @@
                             }
 
                             <!-- Music Player -->
-                                <span class="music-published-date mb-2">Listen to the Sample</span>
+                            <span class="music-published-date mb-2">Listen to the Sample</span>
 
-                                <div class="poca-music-player">
-                                    <audio preload="auto" controls>
-                                        <source src=@path>
-                                    </audio>
-                                </div>
+                            <div class="poca-music-player">
+                                <audio preload="auto" controls>
+                                    <source src=@path>
+                                </audio>
+                            </div>
                             <!-- Likes, Share & Download -->
                             <div class="likes-share-download d-flex align-items-center justify-content-between">
                                 @if (@User.Identity.IsAuthenticated)
                                 {
                                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-@album.AlbumId"> <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now</button>
-                                    @*<a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>*@
+                                    @*<a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>*@<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
                                 }
                             </div>
                         </div>
@@ -175,13 +186,14 @@
                             <div class="modal-footer">
                                 @*<button type="button" class="btn" data-dismiss="modal">Close</button>
                                     <button type="button" class="btn">Save changes</button>*@<button type="button" class="btn" data-dismiss="modal"></button>
+                                <button type="button" class="btn"></button><button type="button" class="btn" data-dismiss="modal"></button>
                                 <button type="button" class="btn"></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                }
-            </div>
+            }
         </div>
-    </section>
-    <!-- ***** Latest Episodes Area End ***** -->
+    </div>
+</section>
+<!-- ***** Latest Episodes Area End ***** -->

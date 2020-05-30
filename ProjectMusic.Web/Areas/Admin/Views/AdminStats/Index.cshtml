@@ -12,60 +12,60 @@
     var profit = Model.Orders.Select(x => x.Album.AlbumPrice).Sum();
 }
 
-<div class="row">
-    <div class="col-md-6 col-xl-4">
-        <div class="card mb-3 widget-content bg-midnight-bloom">
-            <div class="widget-content-wrapper text-white">
-                <div class="widget-content-left">
-                    <div class="widget-heading">Orders</div>
-                    <div class="widget-subheading">In total</div>
+    <div class="row">
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-midnight-bloom">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Orders</div>
+                        <div class="widget-subheading">In total</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>@orderAmount</span></div>
+                    </div>
                 </div>
-                <div class="widget-content-right">
-                    <div class="widget-numbers text-white"><span>@orderAmount</span></div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-grow-early">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Profit</div>
+                        <div class="widget-subheading">In total</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>$ @profit</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-arielle-smile">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Clients</div>
+                        <div class="widget-subheading">In total</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-white"><span>@clients</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
+            <div class="card mb-3 widget-content bg-premium-dark">
+                <div class="widget-content-wrapper text-white">
+                    <div class="widget-content-left">
+                        <div class="widget-heading">Products Sold</div>
+                        <div class="widget-subheading">Revenue streams</div>
+                    </div>
+                    <div class="widget-content-right">
+                        <div class="widget-numbers text-warning"><span>$14M</span></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-xl-4">
-        <div class="card mb-3 widget-content bg-arielle-smile">
-            <div class="widget-content-wrapper text-white">
-                <div class="widget-content-left">
-                    <div class="widget-heading">Clients</div>
-                    <div class="widget-subheading">In total</div>
-                </div>
-                <div class="widget-content-right">
-                    <div class="widget-numbers text-white"><span>@clients</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-xl-4">
-        <div class="card mb-3 widget-content bg-grow-early">
-            <div class="widget-content-wrapper text-white">
-                <div class="widget-content-left">
-                    <div class="widget-heading">Profit</div>
-                    <div class="widget-subheading">In total</div>
-                </div>
-                <div class="widget-content-right">
-                    <div class="widget-numbers text-white"><span>$ @profit</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-        <div class="card mb-3 widget-content bg-premium-dark">
-            <div class="widget-content-wrapper text-white">
-                <div class="widget-content-left">
-                    <div class="widget-heading">Products Sold</div>
-                    <div class="widget-subheading">Revenue streams</div>
-                </div>
-                <div class="widget-content-right">
-                    <div class="widget-numbers text-warning"><span>$14M</span></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <div class="row">

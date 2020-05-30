@@ -45,7 +45,7 @@
 
                     <div class="main-card mb-3 card">
                         <div class="card-header">
-                            Manage Albums
+                            Manage Orders
                         </div>
                         <div class="table-responsive">
                             <table class="align-middle mb-0 table table-borderless table-striped table-hover">
@@ -60,29 +60,32 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                    <tr>
-                                        <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.OrderId)</td>
-                                        <td>
-                                            <div class="widget-content p-0">
-                                                <div class="widget-content-wrapper">
-                                                    <div class="widget-content-left flex2">
-                                                        <div class="widget-heading">@Html.DisplayFor(modelItem => item.Album.AlbumName)</div>
-                                                        <div class="widget-subheading opacity-7">@Html.DisplayFor(modelItem => item.Album.AlbumPrice)</div>
+                                        if (item.User.UserName == User.Identity.Name)
+                                        {
+                                            <tr>
+                                                <td class="text-center text-muted">@Html.DisplayFor(modelItem => item.OrderId)</td>
+                                                <td>
+                                                    <div class="widget-content p-0">
+                                                        <div class="widget-content-wrapper">
+                                                            <div class="widget-content-left flex2">
+                                                                <div class="widget-heading">@Html.DisplayFor(modelItem => item.Album.AlbumName)</div>
+                                                                <div class="widget-subheading opacity-7">@Html.DisplayFor(modelItem => item.Album.AlbumPrice)</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div>
-                                                @Html.DisplayFor(modelItem => item.User.UserName)
-                                            </div>
-                                        </td>
-                                        <td class="text-center">
-                                            <div>
-                                                @Html.DisplayFor(modelItem => item.DatePurchased)
-                                            </div>
-                                        </td>
-                                    </tr>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div>
+                                                        @Html.DisplayFor(modelItem => item.User.UserName)
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <div>
+                                                        @Html.DisplayFor(modelItem => item.DatePurchased)
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
                                     }
                                 </tbody>
                             </table>
