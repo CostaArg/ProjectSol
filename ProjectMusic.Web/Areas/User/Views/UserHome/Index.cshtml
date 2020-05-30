@@ -26,16 +26,25 @@
                                 <a href="#" class="btn poca-btn m-2 ml-0 active">Order Now</a>
                             </div>
                         </div>
+
+                        @{
+                            var latestAlbumName = Model.Albums.Select(x => x.AlbumName).FirstOrDefault();
+                            var latestArtistName = Model.Albums.FirstOrDefault().Artist.ArtistName;
+                            var latestAlbumPhoto = Model.Albums.Select(x => x.AlbumPhotoUrl).FirstOrDefault();
+                            var latestGenre = Model.Albums.First().Songs.First().Genres.First().GenreName;
+                        }
+
                         <!-- Welcome Music Area -->
                         <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
                             <div class="poca-music-thumbnail">
-                                <img src="~/Content/theme/img/bg-img/4.jpg" alt="">
+                                @*<img src="~/Content/theme/img/bg-img/4.jpg" alt="">*@
+                                <img src="@latestAlbumPhoto" alt="Image is missing">
                             </div>
                             <div class="poca-music-content">
-                                <span class="music-published-date">December 9, 2018</span>
-                                <h2>Episode 203 - The Last Blockbuster</h2>
-                                <div class="music-meta-data">
-                                    <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>
+                                <span class="music-published-date"></span>
+                                <h2>@latestAlbumName</h2>
+                                <div class="music-meta-data ml-2">
+                                    <p>By @latestArtistName |  @latestGenre</p>
                                 </div>
                                 <!-- Music Player -->
                                 <div class="poca-music-player">
@@ -45,11 +54,7 @@
                                 </div>
                                 <!-- Likes, Share & Download -->
                                 <div class="likes-share-download d-flex align-items-center justify-content-between">
-                                    <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                                    <div>
-                                        <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>
-                                        <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -106,22 +111,26 @@
                             <div class="music-meta-data">
                                 <p>By <a href="#" class="music-author">@album.Artist.ArtistName</a> | <a href="#" class="music-catagory">@album.Songs.First().Genres.First().GenreName</a></p>
                             </div>
-                            <span class="music-published-date mb-2">Listen to the Sample</span>
+
+                            @{
+                                var songName = @album.Songs.First().SongName.Replace(" ", "");
+                                var path = "../Content/theme/audio/" + songName + ".mp3";
+                            }
+
                             <!-- Music Player -->
-                            <div class="poca-music-player">
-                                <audio preload="auto" controls>
-                                    @{
-                                        var path = "../Content/theme/audio/" + @album.Songs.First().SongName + ".mp3";
-                                    }
-                                    <source src=@path>
-                                </audio>
-                            </div>
+                                <span class="music-published-date mb-2">Listen to the Sample</span>
+
+                                <div class="poca-music-player">
+                                    <audio preload="auto" controls>
+                                        <source src=@path>
+                                    </audio>
+                                </div>
                             <!-- Likes, Share & Download -->
                             <div class="likes-share-download d-flex align-items-center justify-content-between">
                                 @if (@User.Identity.IsAuthenticated)
                                 {
                                     <button type="button" class="btn" data-toggle="modal" data-target="#modal-@album.AlbumId"> <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now</button>
-                                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+                                    @*<a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>*@
                                 }
                             </div>
                         </div>
@@ -165,13 +174,14 @@
                             </div>
                             <div class="modal-footer">
                                 @*<button type="button" class="btn" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn">Save changes</button>*@
+                                    <button type="button" class="btn">Save changes</button>*@<button type="button" class="btn" data-dismiss="modal"></button>
+                                <button type="button" class="btn"></button>
                             </div>
                         </div>
                     </div>
                 </div>
-            }
+                }
+            </div>
         </div>
-    </div>
-</section>
-<!-- ***** Latest Episodes Area End ***** -->
+    </section>
+    <!-- ***** Latest Episodes Area End ***** -->

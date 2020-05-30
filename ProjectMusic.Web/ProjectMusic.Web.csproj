@@ -327,6 +327,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\theme\about.html" />
+    <Content Include="Content\theme\audio\MyNameIs.mp3" />
+    <Content Include="Content\theme\audio\AnderschonenblauenDonau,Op.314.mp3" />
+    <Content Include="Content\theme\audio\ShouldIStayorShouldIGo.mp3" />
+    <Content Include="Content\theme\audio\CountryRoads.mp3" />
     <Content Include="Content\theme\audio\Pneuma.mp3" />
     <Content Include="Content\theme\blog.html" />
     <Content Include="Content\theme\changelog.txt" />

@@ -116,3 +116,12 @@ div.panel-body {
         color: #f55656;
         cursor: pointer;
     }
+
+.spotify-field {
+    /*width: 600px !important;*/
+}
+
+.spotify-button {
+    display: block;
+    width: 100px;
+}

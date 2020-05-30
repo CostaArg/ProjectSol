@@ -2,7 +2,6 @@
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        //data: "{entity:" + JSON.stringify(entity) + "}",
         url: "/AdminStats/GetTopFiveAlbums",
         success: function (data) {
 
@@ -45,7 +44,6 @@
     $.ajax({
         type: "GET",
         contentType: "application/json",
-        //data: "{entity:" + JSON.stringify(entity) + "}",
         url: "/AdminStats/GetTopThreeUsers",
         success: function (data) {
 

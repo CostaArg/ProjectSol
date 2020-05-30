@@ -112,7 +112,7 @@
 </div>
 
 
-<h1 style="margin-bottom: 20px">Best-Selling Albums</h1>
+@*<h1 style="margin-bottom: 20px">Best-Selling Albums</h1>
 
 @{
     var bestSellingAlbums = Model.Albums.OrderByDescending(x => x.AlbumPurchases);
@@ -144,7 +144,7 @@
 {
     <h4>User Id: @user.Id</h4>
     <h4>User Name: @user.UserName</h4>
-}
+}*@
 
 @section scripts {
     @Scripts.Render("~/Scripts/jquery-3.4.1.min.js")

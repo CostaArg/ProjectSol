@@ -45,7 +45,8 @@
                         });
                     },
                     error: function (result) {
-                        alert("Something went wrong with the API");
+                        alert("Something went wrong with the API ");
+                        console.log(result.responseText);
                     }
                 });
             },
