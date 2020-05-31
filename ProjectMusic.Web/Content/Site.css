@@ -54,7 +54,7 @@ div.panel-body {
     background-color: lightgray;
 }
 
-.main-button{
+.main-button {
     width: 73%;
 }
 
@@ -85,7 +85,7 @@ div.panel-body {
 
 .details-container {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
 }
 
 .card-details {
@@ -112,16 +112,103 @@ div.panel-body {
     font-family: "HK Grotesk";
     margin-left: 10px;
 }
+
     .logout-button:hover {
         color: #f55656;
         cursor: pointer;
     }
 
-.spotify-field {
-    /*width: 600px !important;*/
+.profile-pics {
+    width: 100px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.profile-card {
+    width: 500px;
+}
+
+.profile-card-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.card-align-center {
+    text-align: center;
+}
+
+.linkedin {
+    display: inline;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.linkedin-container {
+    display: inline;
+}
+
+.linkedin-button {
+    background-color: #0077b5;
+    color: white;
+}
+
+.github-button {
+    background-color: #16B13A;
+    color: white;
+}
+
+.github {
+    display: inline;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.center-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.single-card-container {
+    align-self: center;
+    margin-bottom: 40px;
+}
+
+.paragraph-container {
+    margin-bottom: 40px;
+}
+
+.order-now-button {
+    margin-left: 105px;
+    margin-top: 10px;
+}
+
+.download-button {
+    text-decoration: none;
+    color: black;
+}
+
+    .download-button:hover {
+        text-decoration: none;
+        color: #f55656;
+    }
+
+.spotify-field{
+    width: 428px !important;
+}
+
+.spotify-container {
+    display: flex;
 }
 
 .spotify-button {
-    display: block;
+    display: flex;
     width: 100px;
+    margin-left: 20px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+.spotify-text{
+    margin-bottom: 5px;
 }

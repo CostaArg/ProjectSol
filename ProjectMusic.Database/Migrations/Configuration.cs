@@ -26,18 +26,33 @@
             Artist ar3 = new Artist() { ArtistName = "TOOL" };
             Artist ar4 = new Artist() { ArtistName = "The Clash" };
             Artist ar5 = new Artist() { ArtistName = "John Denver" };
+            Artist ar6 = new Artist() { ArtistName = "Queen" };
+            Artist ar7 = new Artist() { ArtistName = "Scorpions" };
+            Artist ar8 = new Artist() { ArtistName = "Mobb Deep" };
+            Artist ar9 = new Artist() { ArtistName = "Johnny Cash" };
+            Artist ar10 = new Artist() { ArtistName = "Metallica" };
 
-            Album al1 = new Album() { AlbumName = "The Slim Shady LP", AlbumPrice = 19.99M, AlbumPurchases = 15};
-            Album al2 = new Album() { AlbumName = "Strauss, J. An der schonen blauen Donau (The Blue Danube)", AlbumPrice = 24.99M, AlbumPurchases = 34};
-            Album al3 = new Album() { AlbumName = "Fear Inoculum", AlbumPrice = 14.99M, AlbumPurchases = 7};
-            Album al4 = new Album() { AlbumName = "Combat Rock", AlbumPrice = 27.99M, AlbumPurchases = 36};
-            Album al5 = new Album() { AlbumName = "Poems, Prayers and Promises", AlbumPrice = 11.99M, AlbumPurchases = 21 };
+            Album al1 = new Album() { AlbumName = "The Slim Shady LP", AlbumPrice = 19.99M, AlbumPurchases = 15 };
+            Album al2 = new Album() { AlbumName = "Strauss, J. An der schonen blauen Donau (The Blue Danube)", AlbumPrice = 24.99M, AlbumPurchases = 34 };
+            Album al3 = new Album() { AlbumName = "Fear Inoculum", AlbumPrice = 14.89M, AlbumPurchases = 7 };
+            Album al4 = new Album() { AlbumName = "Combat Rock", AlbumPrice = 27.99M, AlbumPurchases = 36 };
+            Album al5 = new Album() { AlbumName = "Poems, Prayers and Promises", AlbumPrice = 11.95M, AlbumPurchases = 21 };
+            Album al6 = new Album() { AlbumName = "Hot Space", AlbumPrice = 22.99M, AlbumPurchases = 11 };
+            Album al7 = new Album() { AlbumName = "Return to Forever", AlbumPrice = 6.99M, AlbumPurchases = 26 };
+            Album al8 = new Album() { AlbumName = "The Infamous", AlbumPrice = 36.99M, AlbumPurchases = 19 };
+            Album al9 = new Album() { AlbumName = "American IV The Man Comes Around", AlbumPrice = 52.99M, AlbumPurchases = 12 };
+            Album al10 = new Album() { AlbumName = "Ride The Lightning", AlbumPrice = 12.95M, AlbumPurchases = 3 };
 
             Song s1 = new Song() { SongName = "My Name Is" };
             Song s2 = new Song() { SongName = "An der schonen blauen Donau, Op. 314" };
             Song s3 = new Song() { SongName = "Pneuma" };
             Song s4 = new Song() { SongName = "Should I Stay or Should I Go" };
             Song s5 = new Song() { SongName = "Country Roads" };
+            Song s6 = new Song() { SongName = "Under Pressure" };
+            Song s7 = new Song() { SongName = "All for One" };
+            Song s8 = new Song() { SongName = "Trife Life" };
+            Song s9 = new Song() { SongName = "Hurt" };
+            Song s10 = new Song() { SongName = "For Whom The Bell Tolls" };
 
             Genre g1 = new Genre() { GenreName = "Rap" };
             Genre g2 = new Genre() { GenreName = "Classical" };
@@ -51,6 +66,11 @@
             ar3.Albums = new List<Album>() { al3 };
             ar4.Albums = new List<Album>() { al4 };
             ar5.Albums = new List<Album>() { al5 };
+            ar6.Albums = new List<Album>() { al6 };
+            ar7.Albums = new List<Album>() { al7 };
+            ar8.Albums = new List<Album>() { al8 };
+            ar9.Albums = new List<Album>() { al9 };
+            ar10.Albums = new List<Album>() { al10 };
 
             //Assigning songs to artists
             ar1.Songs = new List<Song>() { s1 };
@@ -58,13 +78,18 @@
             ar3.Songs = new List<Song>() { s3 };
             ar4.Songs = new List<Song>() { s4 };
             ar5.Songs = new List<Song>() { s5 };
+            ar6.Songs = new List<Song>() { s6 };
+            ar7.Songs = new List<Song>() { s7 };
+            ar8.Songs = new List<Song>() { s8 };
+            ar9.Songs = new List<Song>() { s9 };
+            ar10.Songs = new List<Song>() { s10 };
 
             //Assigning songs to genres
-            g1.Songs = new List<Song>() { s1 };
+            g1.Songs = new List<Song>() { s1, s8 };
             g2.Songs = new List<Song>() { s2 };
-            g3.Songs = new List<Song>() { s3 };
-            g4.Songs = new List<Song>() { s4 };
-            g5.Songs = new List<Song>() { s5 };
+            g3.Songs = new List<Song>() { s3, s10 };
+            g4.Songs = new List<Song>() { s4, s6, s7 };
+            g5.Songs = new List<Song>() { s5, s9 };
 
             //Assigning artist to albums
             al1.Artist = ar1;
@@ -72,6 +97,11 @@
             al3.Artist = ar3;
             al4.Artist = ar4;
             al5.Artist = ar5;
+            al6.Artist = ar6;
+            al7.Artist = ar7;
+            al8.Artist = ar8;
+            al9.Artist = ar9;
+            al10.Artist = ar10;
 
             //Assigning songs to albums
             al1.Songs = new List<Song>() { s1 };
@@ -79,6 +109,11 @@
             al3.Songs = new List<Song>() { s3 };
             al4.Songs = new List<Song>() { s4 };
             al5.Songs = new List<Song>() { s5 };
+            al6.Songs = new List<Song>() { s6 };
+            al7.Songs = new List<Song>() { s7 };
+            al8.Songs = new List<Song>() { s8 };
+            al9.Songs = new List<Song>() { s9 };
+            al10.Songs = new List<Song>() { s10 };
 
             //Accounts
             string adminEmail = "admin@yahoo.com";
@@ -137,28 +172,10 @@
 
             //Upserting
 
-            context.Artists.AddOrUpdate(x => x.ArtistId, ar1, ar2, ar3, ar4, ar5);
-            context.Albums.AddOrUpdate(x => x.AlbumId, al1, al2, al3, al4, al5);
+            context.Artists.AddOrUpdate(x => x.ArtistId, ar1, ar2, ar3, ar4, ar5, ar6, ar7, ar8, ar9, ar10);
+            context.Albums.AddOrUpdate(x => x.AlbumId, al1, al2, al3, al4, al5, al6, al7, al8, al9, al10);
             context.Genres.AddOrUpdate(x => x.GenreId, g1, g2, g3, g4, g5);
-            context.Songs.AddOrUpdate(x => x.SongId, s1, s2, s3, s4, s5);
-
-            //if (!context.Roles.Any(roles => roles.Name == "User"))
-            //{
-            //    var store = new RoleStore<IdentityRole>(context);
-            //    var manager = new RoleManager<IdentityRole>(store);
-            //    var role = new IdentityRole { Name = "User" };
-
-            //    manager.Create(role);
-            //}
-
-            //if (!context.Roles.Any(roles => roles.Name == "Admin"))
-            //{
-            //    var store = new RoleStore<IdentityRole>(context);
-            //    var manager = new RoleManager<IdentityRole>(store);
-            //    var role = new IdentityRole { Name = "Admin" };
-
-            //    manager.Create(role);
-            //}
+            context.Songs.AddOrUpdate(x => x.SongId, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10);
 
             #endregion
 

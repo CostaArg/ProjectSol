@@ -19,7 +19,10 @@
                     <ul id="nav">
                         <li class="current-item"><a href="/User/UserHome">Home</a></li>
                         @*<li><a href="#">Albums</a></li>*@
-                        <li><a href="/User/UserOrder">Orders</a></li>
+                        @if (@User.Identity.IsAuthenticated)
+                        {
+                            <li><a href="/User/UserOrder">Orders</a></li>
+                        }
                         <li><a href="/User/UserAbout">About</a></li>
                         <li><a href="/User/UserContact">Contact</a></li>
 

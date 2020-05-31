@@ -28,7 +28,6 @@
                 <tr>
                     <th class="text-center">Genre Id</th>
                     <th>Genre Name</th>
-                    <th class="text-center">Has Picture</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -45,19 +44,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </td>
-                        <td class="text-center">
-                            @{
-                                if (item.GenrePhotoUrl != null)
-                                {
-                                    <div class="badge badge-success">True</div>
-
-                                }
-                                else
-                                {
-                                    <div class="badge badge-danger">False</div>
-                                }
-                            }
                         </td>
                         <td class="text-center">
                             <a href="/Admin/Genre/Details/@item.GenreId" class="btn-icon btn-icon-only btn btn-primary"><i class="pe-7s-info btn-icon-wrapper"></i> Details</a>

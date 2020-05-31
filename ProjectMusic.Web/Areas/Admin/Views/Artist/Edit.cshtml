@@ -22,11 +22,6 @@
                 @Html.EditorFor(model => model.ArtistName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ArtistName, "", new { @class = "text-danger" })
             </h6>
-            <h5 class="card-title">Artist Photo Url</h5>
-            <h6 class="card-subtitle">
-                @Html.EditorFor(model => model.ArtistPhotoUrl, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ArtistPhotoUrl, "", new { @class = "text-danger" })
-            </h6>
 
             <div>
                 <input type="submit" value="Save" class="btn btn-success mt-4 main-button" />

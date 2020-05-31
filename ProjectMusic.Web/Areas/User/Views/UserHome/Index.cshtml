@@ -22,17 +22,30 @@
                         <div class="welcome-text">
                             <h2 data-animation="fadeInUp" data-delay="100ms">New Release</h2>
                             <h5 data-animation="fadeInUp" data-delay="300ms">Be the first to get your hands on the latest release! </h5>
-                            <div class="welcome-btn-group">
-                                <a href="#" class="btn poca-btn m-2 ml-0 active">Order Now</a>
-                            </div>
+
+                            @{
+                                var latestAlbumName = Model.Albums.Select(x => x.AlbumName).FirstOrDefault();
+                                var latestArtistName = Model.Albums.FirstOrDefault().Artist.ArtistName;
+                                var latestAlbumPhoto = Model.Albums.Select(x => x.AlbumPhotoUrl).FirstOrDefault();
+                                var latestGenre = Model.Albums.First().Songs.First().Genres.First().GenreName;
+                                var latestAlbumId = Model.Albums.First().AlbumId;
+                            }
+
+
+
+                            @if (@User.Identity.IsAuthenticated)
+                            {
+                                <div class="welcome-btn-group">
+                                    <button type="button" class="btn poca-btn m-2 ml-0 active" data-toggle="modal" data-target="#modal-@latestAlbumId">
+                                        <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now
+                                    </button>
+                                </div>
+                            }
+
+
+
                         </div>
 
-                        @{
-                            var latestAlbumName = Model.Albums.Select(x => x.AlbumName).FirstOrDefault();
-                            var latestArtistName = Model.Albums.FirstOrDefault().Artist.ArtistName;
-                            var latestAlbumPhoto = Model.Albums.Select(x => x.AlbumPhotoUrl).FirstOrDefault();
-                            var latestGenre = Model.Albums.First().Songs.First().Genres.First().GenreName;
-                        }
 
                         <!-- Welcome Music Area -->
                         <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
@@ -50,14 +63,14 @@
                                 <span class="music-published-date mb-2">Listen to the Sample</span>
 
                                 @{
-                                    var featuredSong = Model.Albums.First().Songs.First().SongName.Replace(" ", "");
-                                    var featuredSongPath = "../Content/theme/audio/" + featuredSong + ".mp3";
+                                    var featuredAlbum = Model.Albums.First().AlbumName.Replace(" ", "");
+                                    var featuredAlbumPath = "../Content/theme/audio/" + featuredAlbum + ".mp3";
                                 }
 
                                 <!-- Music Player -->
                                 <div class="poca-music-player">
                                     <audio preload="auto" controls>
-                                        <source src="@featuredSongPath">
+                                        <source src="@featuredAlbumPath">
                                     </audio>
                                 </div>
 
@@ -114,16 +127,15 @@
                             <img src="@album.AlbumPhotoUrl" alt="">
                         </div>
                         <div class="poca-music-content text-center">
-                            <a href="/User/Album/Details/@album.AlbumId">
-                                <h2>@Html.DisplayFor(modelItem => album.AlbumName)</h2>
-                            </a>
+
+                            <h2>@Html.DisplayFor(modelItem => album.AlbumName)</h2>
                             <div class="music-meta-data">
                                 <p>By <a href="#" class="music-author">@album.Artist.ArtistName</a> | <a href="#" class="music-catagory">@album.Songs.First().Genres.First().GenreName</a></p>
                             </div>
 
                             @{
-                                var songName = @album.Songs.First().SongName.Replace(" ", "");
-                                var path = "../Content/theme/audio/" + songName + ".mp3";
+                                var albumName = @album.AlbumName.Replace(" ", "");
+                                var path = "../Content/theme/audio/" + albumName + ".mp3";
                             }
 
                             <!-- Music Player -->
@@ -138,10 +150,9 @@
                             <div class="likes-share-download d-flex align-items-center justify-content-between">
                                 @if (@User.Identity.IsAuthenticated)
                                 {
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-@album.AlbumId">
+                                    <button type="button" class="btn order-now-button" data-toggle="modal" data-target="#modal-@album.AlbumId">
                                         <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now
                                     </button>
-                                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
                                 }
                             </div>
                         </div>

@@ -5,6 +5,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -38,16 +41,15 @@
             @Html.ValidationMessageFor(model => model.AlbumPhotoUrl, "", new { @class = "text-danger" })
         </h6>
 
+        <h5 class="card-title">Spotify Album Id</h5>
 
-        <div>
-
-            <h5 class="card-title">Spotify Album Id</h5>
+        <div class="spotify-container">
             <h6 class="card-subtitle spotify-field">
                 @Html.EditorFor(model => model.SpotifyAlbumId, new { htmlAttributes = new { @class = "form-control", @id = "SpotifyAlbumId" } })
                 @Html.ValidationMessageFor(model => model.SpotifyAlbumId, "", new { @class = "text-danger" })
             </h6>
 
-            <button id="spotify" type="button" class="spotify-button btn btn-success">Spotify</button>
+            <button id="spotify" type="button" class="spotify-button btn btn-success"><i class="fab fa-spotify mr-2 spotify-text"></i>Spotify</button>
 
         </div>
 

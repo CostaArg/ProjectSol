@@ -15,8 +15,6 @@
 
         <h5 class="card-title">Artist Name</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistName)</h6>
 
-        <h5 class="card-title">Artist Photo Url</h5><h6 class="card-subtitle">@Html.DisplayFor(model => model.ArtistPhotoUrl)</h6>
-
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()

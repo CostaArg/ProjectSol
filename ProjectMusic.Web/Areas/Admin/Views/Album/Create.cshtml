@@ -36,18 +36,6 @@
         </h6>
 
         <div>
-
-            <h5 class="card-title">Spotify Album Id</h5>
-            <h6 class="card-subtitle spotify-field">
-                @Html.EditorFor(model => model.SpotifyAlbumId, new { htmlAttributes = new { @class = "form-control", @id = "SpotifyAlbumId" } })
-                @Html.ValidationMessageFor(model => model.SpotifyAlbumId, "", new { @class = "text-danger" })
-            </h6>
-
-            <button id="spotify" type="button" class="spotify-button btn btn-success">Spotify</button>
-
-        </div>
-
-        <div>
             <input type="submit" value="Create" class="btn btn-success mt-4 main-button" />
             <a href="/Admin/Album" class="btn btn-primary mt-4 w-25 float-right">Back to List</a>
         </div>
