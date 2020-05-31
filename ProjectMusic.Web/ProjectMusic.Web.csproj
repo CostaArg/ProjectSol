@@ -329,7 +329,12 @@
     <Content Include="Content\profilePics\profile_kostas.jpg" />
     <Content Include="Content\profilePics\profile_themistoklis.jpg" />
     <Content Include="Content\theme\about.html" />
+    <Content Include="Content\theme\audio\AmericanIVTheManComesAround.mp3" />
     <Content Include="Content\theme\audio\FearInoculum.mp3" />
+    <Content Include="Content\theme\audio\HotSpace.mp3" />
+    <Content Include="Content\theme\audio\ReturntoForever.mp3" />
+    <Content Include="Content\theme\audio\RideTheLightning.mp3" />
+    <Content Include="Content\theme\audio\TheInfamous.mp3" />
     <Content Include="Content\theme\audio\TheSlimShadyLP.mp3" />
     <Content Include="Content\theme\audio\Strauss,J.AnderschonenblauenDonau%28TheBlueDanube%29.mp3" />
     <Content Include="Content\theme\audio\Poems,PrayersandPromises.mp3" />
