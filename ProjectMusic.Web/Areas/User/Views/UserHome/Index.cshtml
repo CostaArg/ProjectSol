@@ -37,7 +37,6 @@
                         <!-- Welcome Music Area -->
                         <div class="poca-music-area mt-100 d-flex align-items-center flex-wrap" data-animation="fadeInUp" data-delay="900ms">
                             <div class="poca-music-thumbnail">
-                                @*<img src="~/Content/theme/img/bg-img/4.jpg" alt="">*@
                                 <img src="@latestAlbumPhoto" alt="Image is missing">
                             </div>
                             <div class="poca-music-content">
@@ -65,7 +64,6 @@
 
                                 <!-- Likes, Share & Download -->
                                 <div class="likes-share-download d-flex align-items-center justify-content-between">
-
                                 </div>
                             </div>
                         </div>
@@ -140,8 +138,10 @@
                             <div class="likes-share-download d-flex align-items-center justify-content-between">
                                 @if (@User.Identity.IsAuthenticated)
                                 {
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-@album.AlbumId"> <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now</button>
-                                    @*<a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>*@<a href="#"><i class="fa fa-download" aria-hidden="true"></i></a>
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#modal-@album.AlbumId">
+                                        <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now
+                                    </button>
+                                    <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
                                 }
                             </div>
                         </div>
@@ -184,10 +184,7 @@
                                 </script>
                             </div>
                             <div class="modal-footer">
-                                @*<button type="button" class="btn" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn">Save changes</button>*@<button type="button" class="btn" data-dismiss="modal"></button>
-                                <button type="button" class="btn"></button><button type="button" class="btn" data-dismiss="modal"></button>
-                                <button type="button" class="btn"></button>
+
                             </div>
                         </div>
                     </div>

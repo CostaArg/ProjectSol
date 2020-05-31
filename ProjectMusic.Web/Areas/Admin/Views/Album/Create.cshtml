@@ -13,9 +13,6 @@
         <h4>Add Album</h4>
         <hr />
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.AlbumId, new { htmlAttributes = new { @id = "AlbumId" } })
-
     <div class="mb-3 card card-body w-50">
         <h5 class="card-title">Album Name</h5>
         <h6 class="card-subtitle">
