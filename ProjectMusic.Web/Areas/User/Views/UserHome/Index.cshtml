@@ -118,48 +118,53 @@
 
             @foreach (var album in Model.Albums)
             {
-                <!-- Single gallery Item -->
 
+                <!-- Get album name, remove spaces and save string to variable  -->
+                <!-- Append album name to path  -->
+
+                    var albumName = @album.AlbumName.Replace(" ", "");
+                    var path = "../Content/theme/audio/" + albumName + ".mp3";
+
+                <!-- Get first song from the first album -->
                 <div class="col-12 col-md-3 single_gallery_item @album.Songs.First().Genres.First().GenreName wow fadeInUp" data-wow-delay="0.2s">
-                    <!-- Welcome Music Area -->
                     <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
                         <div class="poca-music-thumbnail">
+
+                            <!-- Get photo property from the album and show image -->
                             <img src="@album.AlbumPhotoUrl" alt="">
                         </div>
                         <div class="poca-music-content text-center">
 
+                            <!-- Display album name, artist name and genre -->
                             <h2>@Html.DisplayFor(modelItem => album.AlbumName)</h2>
                             <div class="music-meta-data">
-                                <p>By <a href="#" class="music-author">@album.Artist.ArtistName</a> | <a href="#" class="music-catagory">@album.Songs.First().Genres.First().GenreName</a></p>
+                                <p>By <a href="#" class="music-author">@album.Artist.ArtistName</a> | 
+                                <a href="#" class="music-catagory">@album.Songs.First().Genres.First().GenreName</a></p>
                             </div>
 
-                            @{
-                                var albumName = @album.AlbumName.Replace(" ", "");
-                                var path = "../Content/theme/audio/" + albumName + ".mp3";
-                            }
-
-                            <!-- Music Player -->
                             <span class="music-published-date mb-2">Listen to the Sample</span>
 
                             <div class="poca-music-player">
                                 <audio preload="auto" controls>
+                                    <!-- Assign path to music source-->
                                     <source src=@path>
                                 </audio>
                             </div>
-                            <!-- Likes, Share & Download -->
+                            <!-- Check if user is logged in -->
                             <div class="likes-share-download d-flex align-items-center justify-content-between">
                                 @if (@User.Identity.IsAuthenticated)
                                 {
+                                    <!-- On button click, display appropriate modal -->
                                     <button type="button" class="btn order-now-button" data-toggle="modal" data-target="#modal-@album.AlbumId">
                                         <i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>Order Now
                                     </button>
-                                }
+                                } 
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Modal -->
+                <!-- Modal creation -->
                 <div class="modal fade" id="modal-@album.AlbumId" tabindex="-1" role="dialog" aria-labelledby="modal-short-title" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
